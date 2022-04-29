@@ -5,6 +5,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 
 const usersRouter = require('./routes/users-route')
+const usersTokenRouter = require('./routes/users-route-usertoken')
 
 const PORT = process.env.PORT || 4001
 
@@ -16,11 +17,13 @@ app.use(compression())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/users', usersRouter)
+//Bestimmen an welcher Route die Router antworten wird.
+app.use('/', usersTokenRouter)
+app.use('/management', usersRouter)
 
 app.use(function(err, req, res, next) {
     console.error(err.stack)
-    res.status(500).send('Snap!')
+    res.status(500).send('Snap! Etwas ist gebrochen.')
 })
 
 app.use(function (req, res, next) {
@@ -28,5 +31,5 @@ app.use(function (req, res, next) {
 })
 
 app.listen(PORT, function() {
-    console.log(`Server is running on port ${PORT}`)
+    console.log(`Server laeuft an der Port ${PORT}`)
 })
