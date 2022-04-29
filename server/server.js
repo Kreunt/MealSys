@@ -1,11 +1,11 @@
 const express = require('express')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const compression = require('compression')
-const cors = require('cors')
 const helmet = require('helmet')
 
-const usersRouter = require('./routes/users-route')
-const usersTokenRouter = require('./routes/users-route-usertoken')
+const usersRouter = require('./routes/users-route.js')
+const usersTokenRouter = require('./routes/users-route-usertoken.js')
 
 const PORT = process.env.PORT || 4001
 
@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //Bestimmen an welcher Route die Router antworten wird.
+
 app.use('/', usersTokenRouter)
 app.use('/management', usersRouter)
 
@@ -27,6 +28,7 @@ app.use(function(err, req, res, next) {
 })
 
 app.use(function (req, res, next) {
+    console.log("this is 404", req.body)
     res.status(404).send('Sorry, wir konnten es nicht finden!')
 })
 

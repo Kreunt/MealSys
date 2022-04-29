@@ -17,7 +17,7 @@ if(!token) {
       <h1>Meal-Sys</h1>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage/>} />
+          <Route path="/" element={<LoginPage setToken={setToken}/>} />
           <Route path="/management" element={<ManagementDashboard />} />
         </Routes>
       </BrowserRouter>
