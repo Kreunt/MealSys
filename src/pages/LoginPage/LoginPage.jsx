@@ -14,7 +14,11 @@ export default function LoginPage({ setToken }) {
         axios
             .post('http://localhost:4001/returnToken', credentials)
             .then(res => {
-                setToken(res.data.id)
+                if(res.data.id !== undefined) {
+                    setToken(res.data.id);
+                } else {
+                    alert('Invalid credentials');
+                }
             })
             .catch(err => console.log(err))
     }
