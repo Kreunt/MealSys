@@ -4,18 +4,16 @@ import '../../css/Login.css';
 import axios from 'axios';
 
 
+
+
 export default function LoginPage({ setToken }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     
-    const fetchToken = async () => {
+    const fetchToken = async (credentials) => {
         axios
-            .post('http://localhost:4001/returnToken', {
-                username: username,
-                password: password
-            })
+            .post('http://localhost:4001/returnToken', credentials)
             .then(res => {
-                console.log(res.data.id)
                 setToken(res.data.id)
             })
             .catch(err => console.log(err))
@@ -23,12 +21,10 @@ export default function LoginPage({ setToken }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const token = await fetchToken({ 
+        await fetchToken({ 
             username, 
             password 
         });
-        console.log('the token is', token)
-        setToken(token);
     };
 
   return(
