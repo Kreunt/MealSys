@@ -16,8 +16,24 @@ export default function LoginPage({ setToken }) {
             .then(res => {
                 if(res.data.id !== undefined) {
                     setToken(res.data.id);
+                    handleRedirect(credentials);
                 } else {
-                    alert('Invalid credentials');
+                    alert('Falsche Zugangsdaten');
+                }
+            })
+            .catch(err => console.log(err))
+    }
+
+
+    const handleRedirect = (credentials) => {
+        axios
+            .post('http://localhost:4001/returnArea', credentials)
+            .then(res => {
+                if(res.data.area === 'Management') {
+                    alert('Als ' + username + ' ingelogd');
+                    if(window.location.href !== 'http://localhost:3000/management') {
+                        window.location = '/management';
+                    }
                 }
             })
             .catch(err => console.log(err))
@@ -33,18 +49,18 @@ export default function LoginPage({ setToken }) {
 
   return(
     <div className='login-wrapper'>
-        <h2>Please Log In</h2>
+        <h2>Bitte Einloggen</h2>
         <form onSubmit={handleSubmit} >
             <label>
                 <p>Username</p>
                 <input type="text" onChange={e => setUserName(e.target.value)} />
             </label>
             <label>
-                <p>Password</p>
+                <p>Passwort</p>
                 <input type="password" onChange={e => setPassword(e.target.value)} />
             </label>
             <div>
-                <button type="submit">Login</button>
+                <button type="submit">Einloggen</button>
             </div>
         </form>
     </div>

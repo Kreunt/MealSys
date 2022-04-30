@@ -1,5 +1,5 @@
 import './css/App.css';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ManagementDashboard from './pages/ManagementDashboard/ManagementDashboard';
 import LoginPage from './pages/LoginPage/LoginPage';
 import useToken from './useToken';
@@ -23,7 +23,7 @@ if(!token) {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginPage setToken={setToken}/>} />
-          <Route path="/management" element={<ManagementDashboard />} />
+          <Route path="/management" element={<ManagementDashboard token={token}/>} />
         </Routes>
       </BrowserRouter>
     </div>
