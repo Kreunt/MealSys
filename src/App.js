@@ -2,6 +2,7 @@ import './css/App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ManagementDashboard from './pages/ManagementDashboard/ManagementDashboard';
 import LoginPage from './pages/LoginPage/LoginPage';
+import DeliveryDashboard from './pages/DeliveryDashboard';
 import useToken from './useToken';
 
 function App() {
@@ -24,6 +25,7 @@ if(!token) {
         <Routes>
           <Route path="/" element={<LoginPage setToken={setToken}/>} />
           <Route path="/management" element={<ManagementDashboard token={token}/>} />
+          <Route path="/delivery" element={<DeliveryDashboard token={token}/>} />
         </Routes>
       </BrowserRouter>
     </div>

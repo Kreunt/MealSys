@@ -30,9 +30,14 @@ export default function LoginPage({ setToken }) {
             .post('http://localhost:4001/returnArea', credentials)
             .then(res => {
                 if(res.data.area === 'Management') {
-                    alert('Als ' + username + ' ingelogd');
+                    alert('Als ' + username + ' in die Management Dashboard ingelogd');
                     if(window.location.href !== 'http://localhost:3000/management') {
                         window.location = '/management';
+                    }
+                } else if(res.data.area === 'Delivery') {
+                    alert('Als ' + username + ' in die Delivery Dashboard ingelogd');
+                    if(window.location.href !== 'http://localhost:3000/delivery') {
+                        window.location = '/delivery';
                     }
                 }
             })
