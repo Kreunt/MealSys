@@ -6,6 +6,7 @@ const helmet = require('helmet')
 
 const usersRouter = require('./routes/users-route.js')
 const usersTokenRouter = require('./routes/users-route-usertoken.js')
+const customersRouter = require('./routes/customers-route.js')
 
 const PORT = process.env.PORT || 4001
 
@@ -17,10 +18,11 @@ app.use(compression())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-//Bestimmen auf welcher Route die Router antworten wird.
+//Bestimmen von welcher URL der Request erhalten wird.
 
-app.use('/', usersTokenRouter)
-app.use('/management', usersRouter)
+app.use('/api/login', usersTokenRouter)
+app.use('/api/management', usersRouter)
+app.use('/api/customers', customersRouter)
 
 app.use(function(err, req, res, next) {
     console.error(err.stack)

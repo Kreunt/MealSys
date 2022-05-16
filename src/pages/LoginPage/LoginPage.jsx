@@ -12,7 +12,7 @@ export default function LoginPage({ setToken }) {
     
     const fetchToken = async (credentials) => {
         axios
-            .post('http://localhost:4001/returnToken', credentials)
+            .post('http://localhost:4001/api/login/returnToken', credentials)
             .then(res => {
                 if(res.data.id !== undefined) {
                     setToken(res.data.id);
@@ -27,7 +27,7 @@ export default function LoginPage({ setToken }) {
 
     const handleRedirect = (credentials) => {
         axios
-            .post('http://localhost:4001/returnArea', credentials)
+            .post('http://localhost:4001/api/login/returnArea', credentials)
             .then(res => {
                 if(res.data.area === 'Management') {
                     alert('Als ' + username + ' in die Management Dashboard ingelogd');
