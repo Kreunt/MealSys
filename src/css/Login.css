@@ -3,3 +3,10 @@
     flex-direction: column;
     align-items: center;
 }
+.login-wrapper .login-button {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
