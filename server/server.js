@@ -17,7 +17,7 @@ app.use(compression())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-//Bestimmen an welcher Route die Router antworten wird.
+//Bestimmen auf welcher Route die Router antworten wird.
 
 app.use('/', usersTokenRouter)
 app.use('/management', usersRouter)
