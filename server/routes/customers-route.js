@@ -11,3 +11,5 @@ router.post('/create', customersRoutes.customersCreate)
 router.put('/delete', customersRoutes.customersDelete)
 
 router.put('/update', customersRoutes.customersUpdate)
+
+module.exports = router
