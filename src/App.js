@@ -1,7 +1,7 @@
 import './css/App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ManagementDashboard from './pages/ManagementDashboard/ManagementDashboard';
-import LoginPage from './pages/LoginPage/LoginPage';
+import ManagementDashboard from './pages/ManagementDashboard';
+import LoginPage from './pages/LoginPage';
 import DeliveryDashboard from './pages/DeliveryDashboard';
 import useToken from './useToken';
 
