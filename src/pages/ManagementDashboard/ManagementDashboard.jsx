@@ -12,7 +12,7 @@ export default function ManagementDashboard({ token }) {
       <h2>Management Dashboard</h2>
       <p>Welcome User {token}</p>
       <button className='logoutButton' type='button' onClick={logout}>Logout</button>
-      <ButtonBar renderCustomers={true} renderProducts={true}/>
+      <ButtonBar renderCustomers={true} renderMenus={true}/>
     </div>
     
   );

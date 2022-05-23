@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { Customers } from './Customers/customers';
 
-export function ButtonBar({ renderCustomers, renderProducts, renderOrders, renderUsers }) {
+export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUsers }) {
     const [viewCustomers, setViewCustomers] = useState(false);
-    const [viewProducts, setViewProducts] = useState(false);
+    const [viewMenus, setViewMenus] = useState(false);
 
     const handleViewCustomers = () => {
         setViewCustomers(!viewCustomers);
     };
 
-    const handleViewProducts = () => {
-        setViewProducts(!viewProducts);
+    const handleViewMenus = () => {
+        setViewMenus(!viewMenus);
     };
 
 
     return (
         <div className='button-wrapper'>
             {renderCustomers && <button className='customersButton' type='button' onClick={handleViewCustomers}>Customers</button>}
-            {renderProducts && <button className='productsButton' type='button' onClick={handleViewProducts}>Products</button>}
+            {renderMenus && <button className='MenusButton' type='button' onClick={handleViewMenus}>Menus</button>}
                 {viewCustomers && <Customers />}
-                {viewProducts && <div>Products</div>}
+                {viewMenus && <div>Menus</div>}
         </div>
     );
 }
