@@ -4,12 +4,17 @@ import { Customers } from './Customers/customers';
 export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUsers }) {
     const [viewCustomers, setViewCustomers] = useState(false);
     const [viewMenus, setViewMenus] = useState(false);
+    const [viewOrders, setViewOrders] = useState(false);
+    const [viewUsers, setViewUsers] = useState(false);
+
 
     const handleViewCustomers = () => {
+        setViewMenus(false);
         setViewCustomers(!viewCustomers);
     };
 
     const handleViewMenus = () => {
+        setViewCustomers(false);
         setViewMenus(!viewMenus);
     };
 
