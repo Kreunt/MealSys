@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Customers } from './Customers/customers';
 
-export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUsers, renderPersonals, renderIngredients }) {
+export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUsers, renderPersonals, renderIngredients, renderIncomeExpenses }) {
     const [viewCustomers, setViewCustomers] = useState(false);
     const [viewMenus, setViewMenus] = useState(false);
     const [viewOrders, setViewOrders] = useState(false);
     const [viewUsers, setViewUsers] = useState(false);
     const [viewPersonals, setViewPersonals] = useState(false);
     const [viewIngredients, setViewIngredients] = useState(false);
+    const [viewIncomeExpenses, setViewIncomeExpenses] = useState(false);
 
 
     const handleViewCustomers = () => {
@@ -16,6 +17,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         setViewUsers(false);
         setViewPersonals(false);
         setViewIngredients(false);
+        setViewIncomeExpenses(false);
         setViewCustomers(!viewCustomers);
     };
 
@@ -25,6 +27,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         setViewUsers(false);
         setViewPersonals(false);
         setViewIngredients(false);
+        setViewIncomeExpenses(false);
         setViewMenus(!viewMenus);
     };
 
@@ -34,6 +37,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         setViewUsers(false);
         setViewPersonals(false);
         setViewIngredients(false);
+        setViewIncomeExpenses(false);
         setViewOrders(!viewOrders);
     };
 
@@ -43,6 +47,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         setViewOrders(false);
         setViewPersonals(false);
         setViewIngredients(false);
+        setViewIncomeExpenses(false);
         setViewUsers(!viewUsers);
     };
 
@@ -52,6 +57,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         setViewOrders(false);
         setViewUsers(false);
         setViewIngredients(false);
+        setViewIncomeExpenses(false);
         setViewPersonals(!viewPersonals);
     };
 
@@ -61,7 +67,18 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         setViewOrders(false);
         setViewUsers(false);
         setViewPersonals(false);
+        setViewIncomeExpenses(false);
         setViewIngredients(!viewIngredients);
+    };
+
+    const handleViewIncomeExpenses = () => {
+        setViewCustomers(false);
+        setViewMenus(false);
+        setViewOrders(false);
+        setViewUsers(false);
+        setViewPersonals(false);
+        setViewIngredients(false);
+        setViewIncomeExpenses(!viewIncomeExpenses);
     };
 
     return (
@@ -72,12 +89,14 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
             {renderMenus && <button className='MenusButton' type='button' onClick={handleViewMenus}>Menus</button>}
             {renderOrders && <button className='OrdersButton' type='button' onClick={handleViewOrders}>Orders</button>}
             {renderIngredients && <button className='IngredientsButton' type='button' onClick={handleViewIngredients}>Ingredients</button>}
+            {renderIncomeExpenses && <button className='IncomeExpensesButton' type='button' onClick={handleViewIncomeExpenses}>Income/Expenses</button>}
                 {viewUsers && <div>Users</div>}
                 {viewPersonals && <div>Personals</div>}
                 {viewCustomers && <Customers />}
                 {viewMenus && <div>Menus</div>}
                 {viewOrders && <div>Orders</div>}
                 {viewIngredients && <div>Ingredients</div>}
+                {viewIncomeExpenses && <div>Income/Expenses</div>}
         </div>
     );
 }
