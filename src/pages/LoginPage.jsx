@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import '../css/Login.css';
 import axios from 'axios';
 
 
-
-
-export default function LoginPage({ setToken }) {
-    const [username, setUserName] = useState();
+export default function LoginPage({ setLoggedIn, setRole }) {
+    const [username, setUsername] = useState();
     const [password, setPassword] = useState();
-    
+
     const fetchToken = async (credentials) => {
         axios
             .post('http://localhost:4001/api/login/returnToken', credentials)
             .then(res => {
                 if(res.data.id !== undefined) {
-                    setToken(res.data.id);
+                    setLoggedIn(true);
                     handleRedirect(credentials);
                 } else {
                     alert('Falsche Zugangsdaten');
@@ -29,17 +26,7 @@ export default function LoginPage({ setToken }) {
         axios
             .post('http://localhost:4001/api/login/returnArea', credentials)
             .then(res => {
-                if(res.data.area === 'Management') {
-                    alert('Als ' + username + ' in die Management Dashboard ingelogd');
-                    if(window.location.href !== 'http://localhost:3000/management') {
-                        window.location = '/management';
-                    }
-                } else if(res.data.area === 'Delivery') {
-                    alert('Als ' + username + ' in die Delivery Dashboard ingelogd');
-                    if(window.location.href !== 'http://localhost:3000/delivery') {
-                        window.location = '/delivery';
-                    }
-                }
+                setRole(res.data.area);
             })
             .catch(err => console.log(err))
     }
@@ -58,7 +45,7 @@ export default function LoginPage({ setToken }) {
         <form onSubmit={handleSubmit} >
             <label>
                 <p>Username</p>
-                <input type="text" onChange={e => setUserName(e.target.value)} />
+                <input type="text" onChange={e => setUsername(e.target.value)} />
             </label>
             <label>
                 <p>Passwort</p>
@@ -71,7 +58,3 @@ export default function LoginPage({ setToken }) {
     </div>
   );
 }
-
-LoginPage.propTypes = {
-    setToken: PropTypes.func.isRequired,
-};
