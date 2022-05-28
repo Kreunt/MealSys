@@ -1,19 +1,19 @@
 import './css/App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ManagementDashboard from './pages/ManagementDashboard';
+import React, { useState } from 'react';
 import LoginPage from './pages/LoginPage';
-import DeliveryDashboard from './pages/DeliveryDashboard';
-import useToken from './useToken';
+import Dashboard from './pages/Dashboard';
 
 function App() {
 
-const { token, setToken } = useToken();
+const [loggedIn, setLoggedIn] = useState(false);
+const [role, setRole] = useState();
 
-if(!token) {
+if(!loggedIn) {
   return (
   <div className='wrapper'>
     <h1>Meal-Sys</h1> 
-    <LoginPage setToken={setToken} />
+    <LoginPage setLoggedIn={setLoggedIn} setRole={setRole} />
   </div>
   )
 }
@@ -23,9 +23,7 @@ if(!token) {
       <h1>Meal-Sys</h1>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage setToken={setToken}/>} />
-          <Route path="/management" element={<ManagementDashboard token={token}/>} />
-          <Route path="/delivery" element={<DeliveryDashboard token={token}/>} />
+          <Route path="/" element={<Dashboard role={role} />} />
         </Routes>
       </BrowserRouter>
     </div>
