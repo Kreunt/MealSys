@@ -85,7 +85,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
         <div className='button-wrapper'>
             {renderUsers && <button className='UsersButton' type='button' onClick={handleViewUsers}>Users</button>}
             {renderPersonals && <button className='PersonalsButton' type='button' onClick={handleViewPersonals}>Personals</button>}
-            {renderCustomers && <button className='customersButton' type='button' onClick={handleViewCustomers}>Customers</button>}
+            {renderCustomers && <button className='CustomersButton' type='button' onClick={handleViewCustomers}>Customers</button>}
             {renderMenus && <button className='MenusButton' type='button' onClick={handleViewMenus}>Menus</button>}
             {renderOrders && <button className='OrdersButton' type='button' onClick={handleViewOrders}>Orders</button>}
             {renderIngredients && <button className='IngredientsButton' type='button' onClick={handleViewIngredients}>Ingredients</button>}
