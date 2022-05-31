@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 //Bestimmen von welcher URL der Request erhalten wird.
 
 app.use('/api/login', usersTokenRouter)
-app.use('/api/management', usersRouter)
+app.use('/api/users', usersRouter)
 app.use('/api/customers', customersRouter)
 
 app.use(function(err, req, res, next) {
