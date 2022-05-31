@@ -80,6 +80,20 @@ export const Customers = () => {
                 console.log("Es ist ein Fehler aufgetreten: ", error);
             });
     }
+    
+    const handleCustomerUpdate = (rowToChange: any, value: any) => {
+        axios
+            .put(`http://localhost:4001/api/customers/update`, {
+                rowToChange: value
+            })
+            .then(() => {
+                fetchCustomers();
+                alert(`Der Kunde wurde erfolgreich geändert!`);
+            })
+            .catch(error => {
+                console.log("Es ist ein Fehler aufgetreten: ", error);
+            });
+    }
 
     return (
         <div className="customer-list-wrapper">
@@ -87,6 +101,7 @@ export const Customers = () => {
                 <div className="form-wrapper" onSubmit={handleCustomerSubmit}>
 
                     <div className="form-row">
+                        
                         <fieldset>
                             <label className="form-label" htmlFor="name">Enter name:</label>
                             <input className="form-input" type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
