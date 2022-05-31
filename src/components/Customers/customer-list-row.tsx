@@ -20,35 +20,16 @@ export const CustomerListRow = (props: CustomerListRowUI) => (
         <td className='table-item'>
             {props.position}
         </td>
-
-        <td className='table-item'>
-            {props.customer.name}
-        </td>
-
-        <td className='table-item'>
-            {props.customer.age}
-        </td>
-
-        <td className='table-item'>
-            {props.customer.address}
-        </td>
-
-        <td className='table-item'>
-            {props.customer.phone}
-        </td>
-
-        <td className='table-item'>
-            {props.customer.dateOfSubscription}
-        </td>
-
-        <td className='table-item'>
-            {props.customer.dateOfSubscriptionEnd}
-        </td>
-
-        <td className='table-item'>
-            {props.customer.paidAmount}
-        </td>
-
+        {Object.keys(props.customer)
+            .slice(1)
+            .map((key: string, index: number) => {
+                return (
+                    <td key={index} className='table-item'>
+                        {props.customer[key as keyof typeof props.customer]}
+                    </td>
+                );
+            })
+        }
         <td className='table-item'>
             <button
                 className='btn btn-remove'
