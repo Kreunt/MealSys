@@ -13,6 +13,7 @@ interface CustomerListRowUI {
         paidAmount: number;
     };
     handleCustomerRemove: (id: number, name:string) => void;
+    handleCustomerUpdate: (rowToChange: any, value: any) => void;
 }
 
 export const CustomerListRow = (props: CustomerListRowUI) => (
@@ -24,7 +25,7 @@ export const CustomerListRow = (props: CustomerListRowUI) => (
             .slice(1)
             .map((key: string, index: number) => {
                 return (
-                    <td key={index} className='table-item'>
+                    <td key={index} className='table-item' >
                         {props.customer[key as keyof typeof props.customer]}
                     </td>
                 );

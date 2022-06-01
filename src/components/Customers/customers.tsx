@@ -101,7 +101,6 @@ export const Customers = () => {
                 <div className="form-wrapper" onSubmit={handleCustomerSubmit}>
 
                     <div className="form-row">
-                        
                         <fieldset>
                             <label className="form-label" htmlFor="name">Enter name:</label>
                             <input className="form-input" type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -142,7 +141,7 @@ export const Customers = () => {
                 <button className="btn btn-add" onClick={handleCustomerSubmit}>Add Customer</button>
             </div>
 
-            <CustomerList customers={customers} loading={loading} handleCustomerRemove={handleCustomerRemove} />
+            <CustomerList customers={customers} loading={loading} handleCustomerRemove={handleCustomerRemove} handleCustomerUpdate={handleCustomerUpdate} />
         </div>
     );
 }

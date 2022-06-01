@@ -1,8 +1,7 @@
 import React from "react";
-
 import { CustomerListRow } from "./customer-list-row";
-
 import '../../css/customer-list.css';
+
 interface CustomerUI {
     id: number;
     name: string;
@@ -18,6 +17,7 @@ interface CustomerListUI {
     customers: CustomerUI[];
     loading: boolean;
     handleCustomerRemove: (id: number, name: string) => void;
+    handleCustomerUpdate: (rowToChange: any, value: any) => void;
 }
 
 export const CustomerList = (props: CustomerListUI) => {
@@ -56,6 +56,7 @@ export const CustomerList = (props: CustomerListUI) => {
                             customer={customer}
                             position={index + 1}
                             handleCustomerRemove={props.handleCustomerRemove}
+                            handleCustomerUpdate={props.handleCustomerUpdate}
                         />
                         )
                     )
