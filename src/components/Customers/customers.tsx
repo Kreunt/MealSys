@@ -59,8 +59,7 @@ export const Customers = () => {
                 dateOfSubscriptionEnd: dateOfSubscriptionEnd,
                 paidAmount: paidAmount
             })
-            .then(response => {
-                console.log(response.data);
+            .then(() => {
                 fetchCustomers();
                 handleInputsReset();
             })
