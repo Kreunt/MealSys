@@ -17,7 +17,7 @@ interface CustomerListRowUI {
     handleEditClick: (event: any, customer: any) => void;
 }
 
-export const CustomerListRow = (props: CustomerListRowUI) => {
+export const EditableCustomerListRow = (props: CustomerListRowUI) => {
 
     return (
         <tr className='table-row'>
@@ -29,25 +29,22 @@ export const CustomerListRow = (props: CustomerListRowUI) => {
                 .map((key: string, index: number) => {
                     return (
                         <td key={index} className='table-item' >
-                            {props.customer[key as keyof typeof props.customer]}
+                            <input 
+                            type='text' 
+                            required={true}
+                            placeholder={`Enter the ${key}...`}
+                            name={`${key}`} />
                         </td>
                     );
                 })
             }
             <td className='table-item'>
                 <button
-                    className='btn btn-edit'
-                    onClick={(event) => props.handleEditClick(event, props.customer)}>
-                    Edit Customer
-                    </button>
-            </td>
-            <td className='table-item'>
-                <button
                     className='btn btn-remove'
                     onClick={() => props.handleCustomerRemove(props.customer.id, props.customer.name)}>
                     Remove Customer
                     </button>
-            </td>
+            </td>  
         </tr>
     )
 }

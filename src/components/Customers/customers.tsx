@@ -140,7 +140,6 @@ export const Customers = () => {
 
                 <button className="btn btn-add" onClick={handleCustomerSubmit}>Add Customer</button>
             </div>
-
             <CustomerList customers={customers} loading={loading} handleCustomerRemove={handleCustomerRemove} handleCustomerUpdate={handleCustomerUpdate} />
         </div>
     );
