@@ -61,7 +61,7 @@ exports.customersUpdate = async (req, res) => {
         .where('id', req.body.id)
         .update(req.body)  
         .then(() => {
-            res.json({ message: 'Kunde wurde erfolgreich aktualisiert' })
+            res.json({ message: `${req.body.name} war erfolgreich aktualisiert.` })
         })
         .catch(err => {
             res.json({ message: `Ein Fehler ist aufgetaucht: ${err}` })
