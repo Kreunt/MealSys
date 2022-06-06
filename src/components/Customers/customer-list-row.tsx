@@ -13,7 +13,7 @@ interface CustomerListRowUI {
         paidAmount: number;
     };
     handleCustomerRemove: (id: number, name:string) => void;
-    handleCustomerUpdate: (rowToChange: any, value: any) => void;
+    handleCustomerUpdate: (customer: any) => void;
     handleEditClick: (event: any, customer: any) => void;
 }
 
@@ -39,14 +39,14 @@ export const CustomerListRow = (props: CustomerListRowUI) => {
                     className='btn btn-edit'
                     onClick={(event) => props.handleEditClick(event, props.customer)}>
                     Edit Customer
-                    </button>
+                </button>
             </td>
             <td className='table-item'>
                 <button
                     className='btn btn-remove'
                     onClick={() => props.handleCustomerRemove(props.customer.id, props.customer.name)}>
                     Remove Customer
-                    </button>
+                </button>
             </td>
         </tr>
     )
