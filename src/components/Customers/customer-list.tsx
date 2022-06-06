@@ -18,7 +18,7 @@ interface CustomerListUI {
     customers: CustomerUI[];
     loading: boolean;
     handleCustomerRemove: (id: number, name: string) => void;
-    handleCustomerUpdate: (rowToChange: any, value: any) => void;
+    handleCustomerUpdate: (customer: CustomerUI) => void;
 }
 
 export const CustomerList = (props: CustomerListUI) => {
@@ -29,6 +29,12 @@ export const CustomerList = (props: CustomerListUI) => {
     const handleEditClick = (event: any, customer: any) => {
         event.preventDefault();
         setEditCustomerId(customer.id);
+    }
+
+    const handleSaveClick = (event: any, customer: any) => {
+        event.preventDefault();
+        props.handleCustomerUpdate(customer);
+        setEditCustomerId(null);
     }
 
     return (
@@ -68,8 +74,7 @@ export const CustomerList = (props: CustomerListUI) => {
                                     customer={customer}
                                     position={index + 1}
                                     handleCustomerRemove={props.handleCustomerRemove}
-                                    handleCustomerUpdate={props.handleCustomerUpdate} 
-                                    handleEditClick={handleEditClick} 
+                                    handleSaveClick={handleSaveClick}
                                 />
                             ) : (
                                 <CustomerListRow
