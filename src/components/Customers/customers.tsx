@@ -80,14 +80,12 @@ export const Customers = () => {
             });
     }
     
-    const handleCustomerUpdate = (rowToChange: any, value: any) => {
+    const handleCustomerUpdate = (customer: any) => {
         axios
-            .put(`http://localhost:4001/api/customers/update`, {
-                rowToChange: value
-            })
+            .put(`http://localhost:4001/api/customers/update`, customer)
             .then(() => {
                 fetchCustomers();
-                alert(`Der Kunde wurde erfolgreich geändert!`);
+                alert(`${customer.name} wurde erfolgreich geändert!`);
             })
             .catch(error => {
                 console.log("Es ist ein Fehler aufgetreten: ", error);
