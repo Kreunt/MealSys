@@ -26,7 +26,7 @@ export const CustomerList = (props: CustomerListUI) => {
 
     if(props.loading) {return <p>Customer List is loading...</p>}
 
-    const handleEditClick = (event: any, customer: any) => {
+    const handleCustomerEditClick = (event: any, customer: any) => {
         event.preventDefault();
         setEditCustomerId(customer.id);
     }
@@ -83,10 +83,9 @@ export const CustomerList = (props: CustomerListUI) => {
                                     position={index + 1}
                                     handleCustomerRemove={props.handleCustomerRemove}
                                     handleCustomerUpdate={props.handleCustomerUpdate} 
-                                    handleEditClick={handleEditClick} 
+                                    handleCustomerEditClick={handleCustomerEditClick} 
                                 />
-                            )
-                            }
+                            )}
                         </Fragment>
                         )
                     )

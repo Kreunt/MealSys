@@ -14,7 +14,7 @@ interface CustomerListRowUI {
     };
     handleCustomerRemove: (id: number, name:string) => void;
     handleCustomerUpdate: (customer: any) => void;
-    handleEditClick: (event: any, customer: any) => void;
+    handleCustomerEditClick: (event: any, customer: any) => void;
 }
 
 export const CustomerListRow = (props: CustomerListRowUI) => {
@@ -37,7 +37,7 @@ export const CustomerListRow = (props: CustomerListRowUI) => {
             <td className='table-item'>
                 <button
                     className='btn btn-edit'
-                    onClick={(event) => props.handleEditClick(event, props.customer)}>
+                    onClick={(event) => props.handleCustomerEditClick(event, props.customer)}>
                     Edit Customer
                 </button>
             </td>
