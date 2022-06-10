@@ -50,15 +50,12 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
             <td className='table-item'>
                 <button
                     className='btn btn-remove'
-                    onClick={() => {
-                        props.handleUserRemove(props.user.id, props.user.username);
-                    }
-                    }>
+                    onClick={() => {props.handleUserRemove(props.user.id, props.user.username)}} >
                     Remove User
                 </button>
                 <button
                     className='btn btn-save'
-                    onClick={(event) => {props.handleSaveClick(event, changeForm)}}>
+                    onClick={(event) => {props.handleSaveClick(event, changeForm)}} >
                     Save Changes
                 </button>
             </td>
