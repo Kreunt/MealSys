@@ -10,7 +10,7 @@ exports.customersAll = async (req, res) => {
         .catch(err => {
             res.json({ message: `Ein Fehler ist aufgetaucht: ${err}` })
         })
-    }
+}
 
 exports.customersFind = async (req, res) => {
     knex
@@ -23,7 +23,7 @@ exports.customersFind = async (req, res) => {
         .catch(err => {
             res.json({ message: `Ein Fehler ist aufgetaucht: ${err}` })
         })
-    }
+}
 
 exports.customersCreate = async (req, res) => {
     knex('customers')
@@ -42,7 +42,7 @@ exports.customersCreate = async (req, res) => {
         .catch(err => {
             res.json({ message: `Ein Fehler ist aufgetaucht: ${err}` })
         })
-    }
+}
 
 exports.customersDelete = async (req, res) => {
     knex('customers')
@@ -54,7 +54,7 @@ exports.customersDelete = async (req, res) => {
         .catch(err => {
             res.json({ message: `Ein Fehler ist aufgetaucht: ${err}` })
         })
-    }
+}
 
 exports.customersUpdate = async (req, res) => {
     knex('customers')
