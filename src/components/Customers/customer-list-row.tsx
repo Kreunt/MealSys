@@ -13,7 +13,6 @@ interface CustomerListRowUI {
         paidAmount: number;
     };
     handleCustomerRemove: (id: number, name:string) => void;
-    handleCustomerUpdate: (customer: any) => void;
     handleCustomerEditClick: (event: any, customer: any) => void;
 }
 

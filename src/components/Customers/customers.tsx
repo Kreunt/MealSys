@@ -27,8 +27,7 @@ export const Customers = () => {
             })
             .catch(error => {
                 console.log("Es ist ein Fehler aufgetreten: ", error);
-            }
-            );
+            })
     };
 
     const handleInputsReset = () => {

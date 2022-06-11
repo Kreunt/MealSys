@@ -82,13 +82,11 @@ export const CustomerList = (props: CustomerListUI) => {
                                     customer={customer}
                                     position={index + 1}
                                     handleCustomerRemove={props.handleCustomerRemove}
-                                    handleCustomerUpdate={props.handleCustomerUpdate} 
                                     handleCustomerEditClick={handleCustomerEditClick} 
                                 />
                             )}
                         </Fragment>
-                        )
-                    )
+                    ))
                 ) : (
                     <tr className="table-row">
                         <td className="table-item"  style={{ textAlign: 'center' }} colSpan={6}>

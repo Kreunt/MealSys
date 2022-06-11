@@ -66,7 +66,6 @@ export const UsersList = (props: UsersListUI) => {
                                     key={user.id}
                                     user={user}
                                     position={index + 1}
-                                    handleUserUpdate={props.handleUserUpdate}
                                     handleUserEditClick={handleUserEditClick}
                                     handleUserRemove={props.handleUserRemove}
                                 />
