@@ -7,6 +7,7 @@ const helmet = require('helmet')
 const usersRouter = require('./routes/users-route.js')
 const usersTokenRouter = require('./routes/users-route-usertoken.js')
 const customersRouter = require('./routes/customers-route.js')
+const personalsRouter = require('./routes/personal-route.js')
 
 const PORT = process.env.PORT || 4001
 
@@ -23,6 +24,7 @@ app.use(bodyParser.json())
 app.use('/api/login', usersTokenRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/customers', customersRouter)
+app.use('/api/personal', personalsRouter)
 
 app.use(function(err, req, res, next) {
     console.error(err.stack)
