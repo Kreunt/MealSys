@@ -90,12 +90,12 @@ export const Orders = () => {
                     
                     <div className="form-row">
                         <fieldset>
-                            <label className="form-label" htmlFor="customerId">Enter customerId:</label>
+                            <label className="form-label" htmlFor="customerId">Enter Customer ID:</label>
                             <input className="form-input" type="text" id="customerId" value={customerId} onChange={e => setCustomerId(e.target.value)} />
                         </fieldset>
 
                         <fieldset>
-                            <label className="form-label" htmlFor="menuId">Enter menuId:</label>
+                            <label className="form-label" htmlFor="menuId">Enter Menu ID:</label>
                             <input className="form-input" type="text" id="menuId" value={menuId} onChange={e => setMenuId(e.target.value)} />
                         </fieldset>
 
