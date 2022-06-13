@@ -41,7 +41,7 @@ export const CustomerList = (props: CustomerListUI) => {
         <table className='table'>
             <thead>
                 <tr>
-                    <th className='table-head-item' />
+                    <th className="table-head-item">Customer ID</th>
 
                     <th className="table-head-item">Name</th>
 
@@ -72,7 +72,7 @@ export const CustomerList = (props: CustomerListUI) => {
                                 <EditableCustomerListRow 
                                     key={customer.id}
                                     customer={customer}
-                                    position={index + 1}
+                                    position={customer.id}
                                     handleCustomerRemove={props.handleCustomerRemove}
                                     handleSaveClick={handleSaveClick}
                                 />
@@ -80,7 +80,7 @@ export const CustomerList = (props: CustomerListUI) => {
                                 <CustomerListRow
                                     key={customer.id}
                                     customer={customer}
-                                    position={index + 1}
+                                    position={customer.id}
                                     handleCustomerRemove={props.handleCustomerRemove}
                                     handleCustomerEditClick={handleCustomerEditClick} 
                                 />
