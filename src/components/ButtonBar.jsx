@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Customers } from './Customers/customers';
 import { Users } from './Users/users';
 import { Personals } from './Personals/personals';
+import { Orders } from './Orders/orders';
 
 export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUsers, renderPersonals, renderIngredients, renderIncomeExpenses }) {
     const [viewCustomers, setViewCustomers] = useState(false);
@@ -96,7 +97,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
                 {viewPersonals && <Personals />}
                 {viewCustomers && <Customers />}
                 {viewMenus && <div>Menus</div>}
-                {viewOrders && <div>Orders</div>}
+                {viewOrders && <Orders />}
                 {viewIngredients && <div>Ingredients</div>}
                 {viewIncomeExpenses && <div>Income/Expenses</div>}
         </div>
