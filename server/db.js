@@ -97,9 +97,9 @@ knex.schema
             return knex.schema.createTable('orders', (table)  => {
                 table.increments('id').primary()
                 table.string('customerId')
+                table.string('menuId')
                 table.date('date')
                 table.integer('price')
-                table.string('menuId')
             })
             .then(() => {
                 console.log('Table \'orders\' wurde erstellt')
