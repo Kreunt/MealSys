@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { VStack, Button, Flex } from '@chakra-ui/react';
 import { Customers } from './Customers/customers';
 import { Users } from './Users/users';
 import { Personals } from './Personals/personals';
@@ -85,14 +86,18 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
     };
 
     return (
-        <div className='button-wrapper'>
-            {renderUsers && <button className='UsersButton' type='button' onClick={handleViewUsers}>Users</button>}
-            {renderPersonals && <button className='PersonalsButton' type='button' onClick={handleViewPersonals}>Personals</button>}
-            {renderCustomers && <button className='CustomersButton' type='button' onClick={handleViewCustomers}>Customers</button>}
-            {renderMenus && <button className='MenusButton' type='button' onClick={handleViewMenus}>Menus</button>}
-            {renderOrders && <button className='OrdersButton' type='button' onClick={handleViewOrders}>Orders</button>}
-            {renderIngredients && <button className='IngredientsButton' type='button' onClick={handleViewIngredients}>Ingredients</button>}
-            {renderIncomeExpenses && <button className='IncomeExpensesButton' type='button' onClick={handleViewIncomeExpenses}>Income/Expenses</button>}
+        
+        <Flex direction="column" align="center" justify="center" gap={'2'}>
+            <Flex direction="row" align="center" justify="center" p='10px' gap='3' backgroundColor={'#E6FFFA'} borderRadius='20px' shrink={'0'}>
+                {renderUsers && <Button colorScheme={viewUsers ? 'gray' : 'teal' } variant='solid' className='UsersButton' type='button' onClick={handleViewUsers}>Users</Button>}
+                {renderPersonals && <Button colorScheme={viewPersonals ? 'gray' : 'teal' } variant='solid' className='PersonalsButton' type='button' onClick={handleViewPersonals}>Personals</Button>}
+                {renderCustomers && <Button colorScheme={viewCustomers ? 'gray' : 'teal' } variant='solid' className='CustomersButton' type='button' onClick={handleViewCustomers}>Customers</Button>}
+                {renderMenus && <Button colorScheme={viewMenus ? 'gray' : 'teal' } variant='solid' className='MenusButton' type='button' onClick={handleViewMenus}>Menus</Button>}
+                {renderOrders && <Button colorScheme={viewOrders ? 'gray' : 'teal' } variant='solid' className='OrdersButton' type='button' onClick={handleViewOrders}>Orders</Button>}
+                {renderIngredients && <Button colorScheme={viewIngredients ? 'gray' : 'teal' } variant='solid' className='IngredientsButton' type='button' onClick={handleViewIngredients}>Ingredients</Button>}
+                {renderIncomeExpenses && <Button colorScheme={viewIncomeExpenses ? 'gray' : 'teal' } variant='solid' className='IncomeExpensesButton' type='button' onClick={handleViewIncomeExpenses}>Income/Expenses</Button>}
+            </Flex>
+            <VStack >
                 {viewUsers && <Users />}
                 {viewPersonals && <Personals />}
                 {viewCustomers && <Customers />}
@@ -100,6 +105,7 @@ export function ButtonBar({ renderCustomers, renderMenus, renderOrders, renderUs
                 {viewOrders && <Orders />}
                 {viewIngredients && <div>Ingredients</div>}
                 {viewIncomeExpenses && <div>Income/Expenses</div>}
-        </div>
+            </VStack>
+        </Flex>
     );
 }
