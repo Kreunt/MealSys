@@ -1,15 +1,15 @@
-const express = require('express')
-const router = express.Router()
-const personalRoutes = require('./../controllers/personal-controller')
+const express = require("express");
+const router = express.Router();
+const personalRoutes = require("./../controllers/personal-controller");
 
-router.get('/all', personalRoutes.personalAll)
+router.get("/all", personalRoutes.personalAll);
 
-router.get('/find', personalRoutes.personalFind)
+router.get("/find", personalRoutes.personalFind);
 
-router.post('/create', personalRoutes.personalCreate)
+router.post("/create", personalRoutes.personalCreate);
 
-router.put('/delete', personalRoutes.personalDelete)
+router.put("/delete", personalRoutes.personalDelete);
 
-router.put('/update', personalRoutes.personalUpdate)
+router.put("/update", personalRoutes.personalUpdate);
 
-module.exports = router
+module.exports = router;
