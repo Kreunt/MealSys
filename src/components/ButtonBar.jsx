@@ -98,11 +98,15 @@ export function ButtonBar({
         direction="row"
         align="center"
         justify="center"
-        p="10px"
+        p="15px"
         gap="3"
         backgroundColor={"#E6FFFA"}
         borderRadius="20px"
         shrink={"0"}
+        //border="2px solid"
+        //borderColor="#01213a"
+        //boxShadow={"2px 1px black"}
+        filter={"drop-shadow(0 0 0.75rem #08afa8)"}
       >
         {renderUsers && (
           <Button
@@ -110,6 +114,7 @@ export function ButtonBar({
             variant="solid"
             className="UsersButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewUsers}
           >
             Users
@@ -121,6 +126,7 @@ export function ButtonBar({
             variant="solid"
             className="PersonalsButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewPersonals}
           >
             Personals
@@ -132,6 +138,7 @@ export function ButtonBar({
             variant="solid"
             className="CustomersButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewCustomers}
           >
             Customers
@@ -143,6 +150,7 @@ export function ButtonBar({
             variant="solid"
             className="MenusButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewMenus}
           >
             Menus
@@ -154,6 +162,7 @@ export function ButtonBar({
             variant="solid"
             className="OrdersButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewOrders}
           >
             Orders
@@ -165,6 +174,7 @@ export function ButtonBar({
             variant="solid"
             className="IngredientsButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewIngredients}
           >
             Ingredients
@@ -176,6 +186,7 @@ export function ButtonBar({
             variant="solid"
             className="IncomeExpensesButton"
             type="button"
+            filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewIncomeExpenses}
           >
             Income/Expenses

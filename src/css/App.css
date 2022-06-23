@@ -1,6 +1,11 @@
 .wrapper {
     padding: 20px;
 }
-.chakra-button {
-    cursor: pointer;
+button {
+    cursor:pointer;
+}
+.logoutButton {
+    position:absolute;
+    top: 40px;
+    right: 40px;
 }

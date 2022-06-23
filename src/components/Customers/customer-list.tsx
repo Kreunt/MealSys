@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { CustomerListRow } from "./customer-list-row";
 import { EditableCustomerListRow } from "./editable-customer-list-row";
-import "../../css/customer-list.css";
+import "../../css/list.css";
 
 interface CustomerUI {
   id: number;

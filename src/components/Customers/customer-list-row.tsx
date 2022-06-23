@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import React from "react";
 
 interface CustomerListRowUI {
@@ -30,24 +31,26 @@ export const CustomerListRow = (props: CustomerListRowUI) => {
           );
         })}
       <td className="table-item">
-        <button
+        <Button
           className="btn btn-edit"
+          colorScheme={"blue"}
           onClick={(event) =>
             props.handleCustomerEditClick(event, props.customer)
           }
         >
           Edit Customer
-        </button>
+        </Button>
       </td>
       <td className="table-item">
-        <button
+        <Button
           className="btn btn-remove"
+          colorScheme={"blue"}
           onClick={() =>
             props.handleCustomerRemove(props.customer.id, props.customer.name)
           }
         >
           Remove Customer
-        </button>
+        </Button>
       </td>
     </tr>
   );
