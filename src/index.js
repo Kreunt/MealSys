@@ -11,11 +11,11 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: mode("#E6FFFA","#005d55")(props),
-      }
-    })
+        bg: mode("#E6FFFA", "#005d55")(props),
+      },
+    }),
   },
-})
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

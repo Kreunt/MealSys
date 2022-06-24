@@ -1,11 +1,11 @@
 .wrapper {
-    padding: 20px;
+  padding: 20px;
 }
 button {
-    cursor:pointer;
+  cursor: pointer;
 }
 .logoutButton {
-    position:absolute;
-    top: 40px;
-    right: 40px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }

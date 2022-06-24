@@ -103,9 +103,7 @@ export function ButtonBar({
         backgroundColor={"#E6FFFA"}
         borderRadius="20px"
         shrink={"0"}
-        //border="2px solid"
-        //borderColor="#01213a"
-        //boxShadow={"2px 1px black"}
+        border="1px solid #00BFFF"
         filter={"drop-shadow(0 0 0.75rem #08afa8)"}
       >
         {renderUsers && (

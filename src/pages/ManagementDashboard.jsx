@@ -1,3 +1,5 @@
+import { IconButton } from "@chakra-ui/react";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import React from "react";
 import { ButtonBar } from "../components/ButtonBar";
 import "../css/ManagementDashboard.css";
@@ -9,10 +11,18 @@ export function ManagementDashboard() {
   return (
     <div>
       <h2>Management Dashboard</h2>
-      <p>Welcome!</p>
-      <button className="logoutButton" type="button" onClick={logout}>
+      <IconButton
+        className="logoutButton"
+        type="button"
+        onClick={logout}
+        colorScheme="red"
+        position="absolute"
+        top="40px"
+        right="40px"
+        icon={<ArrowBackIcon />}
+      >
         Logout
-      </button>
+      </IconButton>
       <ButtonBar
         renderCustomers={true}
         renderMenus={true}

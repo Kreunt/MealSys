@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { CustomerList } from "./customer-list";
+import { Button, Flex, FormControl, Input, FormLabel } from "@chakra-ui/react";
 
 export const Customers = () => {
   const [name, setName] = useState("");
@@ -104,109 +105,135 @@ export const Customers = () => {
       <div className="customer-list-form">
         <div className="form-wrapper" onSubmit={handleCustomerSubmit}>
           <div className="form-row">
-            <fieldset>
-              <label className="form-label" htmlFor="name">
-                Enter name:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="name"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </fieldset>
+            <Flex
+              float="left"
+              align="left"
+              direction={"column"}
+              width="90%"
+              paddingBottom={"5"}
+            >
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="name">
+                  Enter name:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full name..."
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="age">
-                Enter age:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="number"
-                id="age"
-                name="age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="age">
+                  Enter age:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="number"
+                  id="age"
+                  name="age"
+                  placeholder="Age..."
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="address">
-                Enter address:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="address"
-                name="address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="address">
+                  Enter address:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Address..."
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="phone">
-                Enter phone:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="phone"
-                name="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="phone">
+                  Enter phone:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone..."
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="dateOfSubscription">
-                Enter date of subscription:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="date"
-                id="dateOfSubscription"
-                name="dateOfSubscription"
-                value={dateOfSubscription}
-                onChange={(e) => setDateOfSubscription(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel
+                  className="form-FormLabel"
+                  htmlFor="dateOfSubscription"
+                >
+                  Enter date of subscription:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="date"
+                  id="dateOfSubscription"
+                  name="dateOfSubscription"
+                  placeholder="Date of subscription..."
+                  value={dateOfSubscription}
+                  onChange={(e) => setDateOfSubscription(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="dateOfSubscriptionEnd">
-                Enter date of subscription end:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="date"
-                id="dateOfSubscriptionEnd"
-                name="dateOfSubscriptionEnd"
-                value={dateOfSubscriptionEnd}
-                onChange={(e) => setDateOfSubscriptionEnd(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel
+                  className="form-FormLabel"
+                  htmlFor="dateOfSubscriptionEnd"
+                >
+                  Enter date of subscription end:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="date"
+                  id="dateOfSubscriptionEnd"
+                  name="dateOfSubscriptionEnd"
+                  value={dateOfSubscriptionEnd}
+                  onChange={(e) => setDateOfSubscriptionEnd(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="paidAmount">
-                Enter paid amount:{" "}
-              </label>
-              <input
-                className="form-input"
-                type="number"
-                id="paidAmount"
-                name="paidAmount"
-                value={paidAmount}
-                onChange={(e) => setPaidAmount(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="paidAmount">
+                  Enter paid amount:{" "}
+                </FormLabel>
+                <Input
+                  className="form-Input"
+                  type="number"
+                  id="paidAmount"
+                  name="paidAmount"
+                  placeholder="Paid amount..."
+                  value={paidAmount}
+                  onChange={(e) => setPaidAmount(e.target.value)}
+                />
+              </FormControl>
+              <Button
+                className="btn btn-add"
+                colorScheme={"green"}
+                onClick={handleCustomerSubmit}
+                position={"relative"}
+                top={"10px"}
+                maxWidth={"150px"}
+              >
+                Add Customer
+              </Button>
+            </Flex>
           </div>
         </div>
-
-        <button className="btn btn-add" onClick={handleCustomerSubmit}>
-          Add Customer
-        </button>
       </div>
       <CustomerList
         customers={customers}

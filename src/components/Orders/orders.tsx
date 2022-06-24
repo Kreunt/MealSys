@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { OrdersList } from "./orders-list";
+import { Button } from "@chakra-ui/react";
 
 export const Orders = () => {
   const [customerId, setCustomerId] = useState("");
@@ -146,13 +147,16 @@ export const Orders = () => {
           </div>
         </div>
 
-        <button
+        <Button
           className="btn btn-add"
-          type="submit"
+          colorScheme={"green"}
           onClick={handleOrderSubmit}
+          position="relative"
+          top={"5px"}
+          float={"right"}
         >
           Add Order
-        </button>
+        </Button>
       </div>
       <OrdersList
         orders={orders}

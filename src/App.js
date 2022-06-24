@@ -12,11 +12,7 @@ function App() {
   if (!loggedIn) {
     return (
       <div className="wrapper">
-        <Heading
-          fontFamily="heading"
-          fontStyle="italic"
-          textAlign="center"
-        >
+        <Heading fontFamily="heading" fontStyle="italic" textAlign="center">
           Meal-Sys
         </Heading>
         <LoginPage setLoggedIn={setLoggedIn} setRole={setRole} />
@@ -26,10 +22,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Heading
-        fontFamily={"heading"}
-        fontStyle={"italic"}
-      >
+      <Heading fontFamily={"heading"} fontStyle={"italic"} textAlign="left">
         Meal-Sys
       </Heading>
       <BrowserRouter>
