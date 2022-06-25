@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { CustomerListRow } from "./customer-list-row";
 import { EditableCustomerListRow } from "./editable-customer-list-row";
-import "../../css/list.css";
+import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 
 interface CustomerUI {
   id: number;
@@ -40,32 +40,32 @@ export const CustomerList = (props: CustomerListUI) => {
   };
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th className="table-head-item">Customer ID</th>
+    <Table className="table">
+      <Thead>
+        <Tr>
+          <Th className="table-head-item">Customer ID</Th>
 
-          <th className="table-head-item">Name</th>
+          <Th className="table-head-item">Name</Th>
 
-          <th className="table-head-item">Age</th>
+          <Th className="table-head-item">Age</Th>
 
-          <th className="table-head-item">Address</th>
+          <Th className="table-head-item">Address</Th>
 
-          <th className="table-head-item">Phone</th>
+          <Th className="table-head-item">Phone</Th>
 
-          <th className="table-head-item">Date of subscription</th>
+          <Th className="table-head-item">Date of subscription</Th>
 
-          <th className="table-head-item">Date of subscription end</th>
+          <Th className="table-head-item">Date of subscription end</Th>
 
-          <th className="table-head-item">Paid amount</th>
+          <Th className="table-head-item">Paid amount</Th>
 
-          <th className="table-head-item">Actions</th>
+          <Th className="table-head-item">Actions</Th>
 
-          <th className="table-head-item" />
-        </tr>
-      </thead>
+          <Th className="table-head-item" />
+        </Tr>
+      </Thead>
 
-      <tbody className="table-body">
+      <Tbody className="table-body">
         {props.customers.length > 0 ? (
           props.customers.map((customer: CustomerUI, index: number) => (
             <Fragment key={index}>
@@ -89,17 +89,17 @@ export const CustomerList = (props: CustomerListUI) => {
             </Fragment>
           ))
         ) : (
-          <tr className="table-row">
-            <td
+          <Tr className="table-row">
+            <Td
               className="table-item"
               style={{ textAlign: "center" }}
               colSpan={6}
             >
               No customers found
-            </td>
-          </tr>
+            </Td>
+          </Tr>
         )}
-      </tbody>
-    </table>
+      </Tbody>
+    </Table>
   );
 };

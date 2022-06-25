@@ -1,5 +1,6 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 import React from "react";
+import { Tr, Td } from "@chakra-ui/react";
 
 interface CustomerListRowUI {
   position: number;
@@ -19,39 +20,40 @@ interface CustomerListRowUI {
 
 export const CustomerListRow = (props: CustomerListRowUI) => {
   return (
-    <tr className="table-row">
-      <td className="table-item">{props.position}</td>
+    <Tr className="table-row">
+      <Td className="table-item">{props.position}</Td>
       {Object.keys(props.customer)
         .slice(1)
         .map((key: string, index: number) => {
           return (
-            <td key={index} className="table-item">
+            <Td key={index} className="table-item">
               {props.customer[key as keyof typeof props.customer]}
-            </td>
+            </Td>
           );
         })}
-      <td className="table-item">
-        <Button
-          className="btn btn-edit"
-          colorScheme={"blue"}
-          onClick={(event) =>
-            props.handleCustomerEditClick(event, props.customer)
-          }
-        >
-          Edit Customer
-        </Button>
-      </td>
-      <td className="table-item">
-        <Button
-          className="btn btn-remove"
-          colorScheme={"blue"}
-          onClick={() =>
-            props.handleCustomerRemove(props.customer.id, props.customer.name)
-          }
-        >
-          Remove Customer
-        </Button>
-      </td>
-    </tr>
+
+      <Td className="table-item">
+        <Flex direction={"row"} gap="5">
+          <Button
+            className="btn btn-edit"
+            colorScheme={"blue"}
+            onClick={(event) =>
+              props.handleCustomerEditClick(event, props.customer)
+            }
+          >
+            Edit Customer
+          </Button>
+          <Button
+            className="btn btn-remove"
+            colorScheme={"red"}
+            onClick={() =>
+              props.handleCustomerRemove(props.customer.id, props.customer.name)
+            }
+          >
+            Remove Customer
+          </Button>
+        </Flex>
+      </Td>
+    </Tr>
   );
 };

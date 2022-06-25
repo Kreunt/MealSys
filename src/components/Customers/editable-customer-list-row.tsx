@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Flex, Input, Td, Tr } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 interface CustomerListRowUI {
@@ -30,14 +30,14 @@ export const EditableCustomerListRow = (props: CustomerListRowUI) => {
   });
 
   return (
-    <tr className="table-row">
-      <td className="table-item">{props.position}</td>
+    <Tr className="table-row">
+      <Td className="table-item">{props.position}</Td>
       {Object.keys(props.customer)
         .slice(1)
         .map((key: string, index: number) => {
           return (
-            <td key={index} className="table-item">
-              <input
+            <Td key={index} className="table-item">
+              <Input
                 type="text"
                 required={true}
                 placeholder={`Enter the ${key}...`}
@@ -50,27 +50,29 @@ export const EditableCustomerListRow = (props: CustomerListRowUI) => {
                   });
                 }}
               />
-            </td>
+            </Td>
           );
         })}
-      <td className="table-item">
-        <Button
-          className="btn btn-remove"
-          onClick={() =>
-            props.handleCustomerRemove(props.customer.id, props.customer.name)
-          }
-          colorScheme={"red"}
-        >
-          Remove Customer
-        </Button>
-        <Button
-          className="btn btn-save"
-          onClick={(event) => props.handleSaveClick(event, changeForm)}
-          colorScheme={"green"}
-        >
-          Save Changes
-        </Button>
-      </td>
-    </tr>
+      <Td className="table-item">
+        <Flex direction={"row"} gap="5">
+          <Button
+            className="btn btn-save"
+            onClick={(event) => props.handleSaveClick(event, changeForm)}
+            colorScheme={"green"}
+          >
+            Save Changes
+          </Button>
+          <Button
+            className="btn btn-remove"
+            onClick={() =>
+              props.handleCustomerRemove(props.customer.id, props.customer.name)
+            }
+            colorScheme={"red"}
+          >
+            Remove Customer
+          </Button>
+        </Flex>
+      </Td>
+    </Tr>
   );
 };
