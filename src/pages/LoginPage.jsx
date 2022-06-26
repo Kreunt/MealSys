@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/Login.css";
 import axios from "axios";
+import { Button, FormLabel, Heading, Input } from "@chakra-ui/react";
 
 export default function LoginPage({ setLoggedIn, setRole }) {
   const [username, setUsername] = useState();
@@ -39,23 +40,23 @@ export default function LoginPage({ setLoggedIn, setRole }) {
 
   return (
     <div className="login-wrapper">
-      <h2>Bitte Einloggen</h2>
+      <Heading fontSize={"m"}>Bitte Einloggen</Heading>
       <form onSubmit={handleSubmit}>
-        <label>
+        <FormLabel>
           <p>Username</p>
-          <input type="text" onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <label>
+          <Input type="text" onChange={(e) => setUsername(e.target.value)} />
+        </FormLabel>
+        <FormLabel>
           <p>Passwort</p>
-          <input
+          <Input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-        </label>
+        </FormLabel>
         <div>
-          <button className="login-button" type="submit">
+          <Button className="login-button" type="submit" colorScheme={"green"}>
             Einloggen
-          </button>
+          </Button>
         </div>
       </form>
     </div>
