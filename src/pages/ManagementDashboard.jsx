@@ -28,9 +28,9 @@ export function ManagementDashboard() {
         renderMenus={true}
         renderOrders={true}
         renderUsers={true}
-        renderIngredients={true}
+        renderIngredients={false} //wichtig
         renderPersonals={true}
-        renderIncomeExpenses={true}
+        renderIncomeExpenses={false} //wichtig
       />
     </div>
   );
