@@ -1,3 +1,4 @@
+import { Button, Flex, Tr, Td } from "@chakra-ui/react";
 import React from "react";
 
 interface OrdersListRowUI {
@@ -15,33 +16,35 @@ interface OrdersListRowUI {
 
 export const OrdersListRow = (props: OrdersListRowUI) => {
   return (
-    <tr className="table-row">
-      <td className="table-item">{props.position}</td>
+    <Tr className="table-row">
+      <Td className="table-item">{props.position}</Td>
       {Object.keys(props.order)
         .slice(1)
         .map((key: string, index: number) => {
           return (
-            <td key={index} className="table-item">
+            <Td key={index} className="table-item">
               {props.order[key as keyof typeof props.order]}
-            </td>
+            </Td>
           );
         })}
-      <td className="table-item">
-        <button
-          className="btn btn-edit"
-          onClick={(event) => props.handleOrderEditClick(event, props.order)}
-        >
-          Edit Order
-        </button>
-      </td>
-      <td className="table-item">
-        <button
-          className="btn btn-remove"
-          onClick={() => props.handleOrderRemove(props.order.id)}
-        >
-          Remove Order
-        </button>
-      </td>
-    </tr>
+      <Td className="table-item">
+        <Flex direction={"row"} gap="5">
+          <Button
+            className="btn btn-edit"
+            colorScheme={"blue"}
+            onClick={(event) => props.handleOrderEditClick(event, props.order)}
+          >
+            Edit Order
+          </Button>
+          <Button
+            className="btn btn-remove"
+            colorScheme={"red"}
+            onClick={() => props.handleOrderRemove(props.order.id)}
+          >
+            Remove Order
+          </Button>
+        </Flex>
+      </Td>
+    </Tr>
   );
 };

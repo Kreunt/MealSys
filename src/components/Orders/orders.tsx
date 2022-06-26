@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { OrdersList } from "./orders-list";
-import { Button } from "@chakra-ui/react";
+import { Button, Flex, FormControl, Input, FormLabel } from "@chakra-ui/react";
 
 export const Orders = () => {
   const [customerId, setCustomerId] = useState("");
@@ -93,70 +93,80 @@ export const Orders = () => {
       <div className="orders-list-form">
         <div className="form-wrapper" onSubmit={handleOrderSubmit}>
           <div className="form-row">
-            <fieldset>
-              <label className="form-label" htmlFor="customerId">
-                Enter Customer ID:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="customerId"
-                value={customerId}
-                onChange={(e) => setCustomerId(e.target.value)}
-              />
-            </fieldset>
+            <Flex
+              float="left"
+              align="left"
+              direction={"column"}
+              width="90%"
+              paddingBottom={"5"}
+            >
+              <FormControl isRequired>
+                <FormLabel className="form-label" htmlFor="customerId">
+                  Enter Customer ID:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="customerId"
+                  placeholder="Customer ID..."
+                  value={customerId}
+                  onChange={(e) => setCustomerId(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="menuId">
-                Enter Menu ID:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="menuId"
-                value={menuId}
-                onChange={(e) => setMenuId(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-label" htmlFor="menuId">
+                  Enter Menu ID:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="menuId"
+                  placeholder="Menu ID..."
+                  value={menuId}
+                  onChange={(e) => setMenuId(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="date">
-                Enter date:
-              </label>
-              <input
-                className="form-input"
-                type="date"
-                id="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-label" htmlFor="date">
+                  Enter date:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="date"
+                  id="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="price">
-                Enter price:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-label" htmlFor="price">
+                  Enter price:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="price"
+                  placeholder="Price..."
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+                <Button
+                  className="btn btn-add"
+                  colorScheme={"green"}
+                  onClick={handleOrderSubmit}
+                  position={"relative"}
+                  top={"10px"}
+                  maxWidth={"150px"}
+                >
+                  Add Order
+                </Button>
+              </FormControl>
+            </Flex>
           </div>
         </div>
-
-        <Button
-          className="btn btn-add"
-          colorScheme={"green"}
-          onClick={handleOrderSubmit}
-          position="relative"
-          top={"5px"}
-          float={"right"}
-        >
-          Add Order
-        </Button>
       </div>
       <OrdersList
         orders={orders}

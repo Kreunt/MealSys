@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { OrdersListRow } from "./orders-list-row";
 import { EditableOrdersListRow } from "./editable-orders-list-row";
+import { Table, Thead, Tbody, Tr, Th } from "@chakra-ui/react";
 
 interface OrderUI {
   id: number;
@@ -36,26 +37,26 @@ export const OrdersList = (props: OrdersListUI) => {
   };
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th className="table-head-item" />
+    <Table className="table">
+      <Thead>
+        <Tr>
+          <Th className="table-head-item" />
 
-          <th className="table-head-item">Customer ID</th>
+          <Th className="table-head-item">Customer ID</Th>
 
-          <th className="table-head-item">Menu ID</th>
+          <Th className="table-head-item">Menu ID</Th>
 
-          <th className="table-head-item">Date</th>
+          <Th className="table-head-item">Date</Th>
 
-          <th className="table-head-item">Price</th>
+          <Th className="table-head-item">Price</Th>
 
-          <th className="table-head-item">Actions</th>
+          <Th className="table-head-item">Actions</Th>
 
-          <th className="table-head-item" />
-        </tr>
-      </thead>
+          <Th className="table-head-item" />
+        </Tr>
+      </Thead>
 
-      <tbody className="table-body">
+      <Tbody className="table-body">
         {props.orders.map((order: OrderUI, index: number) => (
           <Fragment key={index}>
             {editOrderId === order.id ? (
@@ -77,7 +78,7 @@ export const OrdersList = (props: OrdersListUI) => {
             )}
           </Fragment>
         ))}
-      </tbody>
-    </table>
+      </Tbody>
+    </Table>
   );
 };
