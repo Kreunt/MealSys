@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { UsersListRow } from "./users-list-row";
 import { EditableUsersListRow } from "./editable-users-list-row";
+import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 
 interface UserUI {
   id: number;
@@ -35,24 +36,24 @@ export const UsersList = (props: UsersListUI) => {
   };
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th className="table-head-item" />
+    <Table className="table">
+      <Thead>
+        <Tr>
+          <Th className="table-head-item" />
 
-          <th className="table-head-item">Username</th>
+          <Th className="table-head-item">Username</Th>
 
-          <th className="table-head-item">Password</th>
+          <Th className="table-head-item">Password</Th>
 
-          <th className="table-head-item">Area</th>
+          <Th className="table-head-item">Area</Th>
 
-          <th className="table-head-item">Actions</th>
+          <Th className="table-head-item">Actions</Th>
 
-          <th className="table-head-item" />
-        </tr>
-      </thead>
+          <Th className="table-head-item" />
+        </Tr>
+      </Thead>
 
-      <tbody className="table-body">
+      <Tbody className="table-body">
         {props.users.map((user: UserUI, index: number) => (
           <Fragment key={index}>
             {editUserId === user.id ? (
@@ -74,7 +75,7 @@ export const UsersList = (props: UsersListUI) => {
             )}
           </Fragment>
         ))}
-      </tbody>
-    </table>
+      </Tbody>
+    </Table>
   );
 };

@@ -1,6 +1,5 @@
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, Tr, Td } from "@chakra-ui/react";
 import React from "react";
-import { Tr, Td } from "@chakra-ui/react";
 
 interface CustomerListRowUI {
   position: number;

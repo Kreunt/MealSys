@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { UsersList } from "./users-list";
+import { Button, Flex, FormControl, Input, FormLabel } from "@chakra-ui/react";
 
 export const Users = () => {
   const [username, setUsername] = useState("");
@@ -85,54 +86,68 @@ export const Users = () => {
       <div className="user-list-form">
         <div className="form-wrapper" onSubmit={handleUserSubmit}>
           <div className="form-row">
-            <fieldset>
-              <label className="form-label" htmlFor="username">
-                Enter username:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </fieldset>
+            <Flex
+              float="left"
+              align="left"
+              direction={"column"}
+              width="90%"
+              paddingBottom={"5"}
+            >
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="username">
+                  Enter username:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="username"
+                  placeholder="Username..."
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="password">
-                Enter password:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="password">
+                  Enter password:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  placeholder="Password..."
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="area">
-                Enter area:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="area"
-                value={area}
-                onChange={(e) => setArea(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="area">
+                  Enter area:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  placeholder="Area..."
+                  id="area"
+                  value={area}
+                  onChange={(e) => setArea(e.target.value)}
+                />
+              </FormControl>
+              <Button
+                className="btn btn-add"
+                colorScheme={"green"}
+                type="submit"
+                onClick={handleUserSubmit}
+                position={"relative"}
+                top={"10px"}
+                maxWidth={"150px"}
+              >
+                Add User
+              </Button>
+            </Flex>
           </div>
         </div>
-
-        <button
-          className="btn btn-add"
-          type="submit"
-          onClick={handleUserSubmit}
-        >
-          Add User
-        </button>
       </div>
       <UsersList
         users={users}
