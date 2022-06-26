@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Flex, Tr, Td } from "@chakra-ui/react";
 
 interface PersonalListRowUI {
   position: number;
@@ -17,8 +18,8 @@ interface PersonalListRowUI {
 
 export const PersonalListRow = (props: PersonalListRowUI) => {
   return (
-    <tr className="table-row">
-      <td className="table-item">{props.position}</td>
+    <Tr className="table-row">
+      <Td className="table-item">{props.position}</Td>
       {Object.keys(props.personal)
         .slice(1)
         .map((key: string, index: number) => {
@@ -28,26 +29,28 @@ export const PersonalListRow = (props: PersonalListRowUI) => {
             </td>
           );
         })}
-      <td className="table-item">
-        <button
-          className="btn btn-edit"
-          onClick={(event) =>
-            props.handlePersonalEditClick(event, props.personal)
-          }
-        >
-          Edit Personal
-        </button>
-      </td>
-      <td className="table-item">
-        <button
-          className="btn btn-remove"
-          onClick={() =>
-            props.handlePersonalRemove(props.personal.id, props.personal.name)
-          }
-        >
-          Remove Personal
-        </button>
-      </td>
-    </tr>
+      <Td className="table-item">
+        <Flex direction={"row"} gap="5">
+          <Button
+            className="btn btn-edit"
+            colorScheme={"blue"}
+            onClick={(event) =>
+              props.handlePersonalEditClick(event, props.personal)
+            }
+          >
+            Edit Personal
+          </Button>
+          <Button
+            className="btn btn-remove"
+            colorScheme={"red"}
+            onClick={() =>
+              props.handlePersonalRemove(props.personal.id, props.personal.name)
+            }
+          >
+            Remove Personal
+          </Button>
+        </Flex>
+      </Td>
+    </Tr>
   );
 };

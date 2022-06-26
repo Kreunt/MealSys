@@ -1,3 +1,4 @@
+import { Button, Flex, Input, Td, Tr } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 interface PersonalListRowUI {
@@ -27,14 +28,14 @@ export const EditablePersonalListRow = (props: PersonalListRowUI) => {
   });
 
   return (
-    <tr className="table-row">
-      <td className="table-item">{props.position}</td>
+    <Tr className="table-row">
+      <Td className="table-item">{props.position}</Td>
       {Object.keys(props.personal)
         .slice(1)
         .map((key: string, index: number) => {
           return (
-            <td key={index} className="table-item">
-              <input
+            <Td key={index} className="table-item">
+              <Input
                 type="text"
                 required={true}
                 placeholder={`Enter the ${key}...`}
@@ -47,27 +48,34 @@ export const EditablePersonalListRow = (props: PersonalListRowUI) => {
                   });
                 }}
               />
-            </td>
+            </Td>
           );
         })}
-      <td className="table-item">
-        <button
-          className="btn btn-remove"
-          onClick={() => {
-            props.handlePersonalRemove(props.personal.id, props.personal.name);
-          }}
-        >
-          Remove Personal
-        </button>
-        <button
-          className="btn btn-save"
-          onClick={(event) => {
-            props.handleSaveClick(event, changeForm);
-          }}
-        >
-          Save Changes
-        </button>
-      </td>
-    </tr>
+      <Td className="table-item">
+        <Flex direction={"row"} gap="5">
+          <Button
+            className="btn btn-save"
+            onClick={(event) => {
+              props.handleSaveClick(event, changeForm);
+            }}
+            colorScheme={"green"}
+          >
+            Save Changes
+          </Button>
+          <Button
+            className="btn btn-remove"
+            onClick={() => {
+              props.handlePersonalRemove(
+                props.personal.id,
+                props.personal.name
+              );
+            }}
+            colorScheme={"red"}
+          >
+            Remove Personal
+          </Button>
+        </Flex>
+      </Td>
+    </Tr>
   );
 };

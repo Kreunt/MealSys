@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { PersonalList } from "./personal-list";
+import { Button, Flex, FormControl, FormLabel, Input } from "@chakra-ui/react";
 
 export const Personals = () => {
   const [name, setName] = useState("");
@@ -101,95 +102,115 @@ export const Personals = () => {
       <div className="personal-list-form">
         <div className="form-wrapper" onSubmit={handlePersonalSubmit}>
           <div className="form-row">
-            <fieldset>
-              <label className="form-label" htmlFor="name">
-                Enter name:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="name"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </fieldset>
+            <Flex
+              float="left"
+              align="left"
+              direction={"column"}
+              width="90%"
+              paddingBottom={"5"}
+            >
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="name">
+                  Enter name:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name..."
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="age">
-                Enter age:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="age"
-                name="age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="age">
+                  Enter age:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="age"
+                  name="age"
+                  placeholder="Age..."
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="workingHours">
-                Enter working hours:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="workingHours"
-                name="workingHours"
-                value={workingHours}
-                onChange={(e) => setWorkingHours(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="workingHours">
+                  Enter working hours:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="workingHours"
+                  name="workingHours"
+                  placeholder="Working hours..."
+                  value={workingHours}
+                  onChange={(e) => setWorkingHours(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="freeDays">
-                Enter free days:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="freeDays"
-                name="freeDays"
-                value={freeDays}
-                onChange={(e) => setFreeDays(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="freeDays">
+                  Enter free days:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="freeDays"
+                  name="freeDays"
+                  placeholder="Free days..."
+                  value={freeDays}
+                  onChange={(e) => setFreeDays(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="area">
-                Enter area:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="area"
-                name="area"
-                value={area}
-                onChange={(e) => setArea(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="area">
+                  Enter area:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="area"
+                  name="area"
+                  placeholder="Area..."
+                  value={area}
+                  onChange={(e) => setArea(e.target.value)}
+                />
+              </FormControl>
 
-            <fieldset>
-              <label className="form-label" htmlFor="phone">
-                Enter phone:
-              </label>
-              <input
-                className="form-input"
-                type="text"
-                id="phone"
-                name="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </fieldset>
+              <FormControl isRequired>
+                <FormLabel className="form-FormLabel" htmlFor="phone">
+                  Enter phone:
+                </FormLabel>
+                <Input
+                  className="form-input"
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone..."
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </FormControl>
+              <Button
+                className="btn btn-add"
+                onClick={handlePersonalSubmit}
+                position={"relative"}
+                top={"10px"}
+                maxWidth={"150px"}
+                colorScheme={"green"}
+              >
+                Add Personal
+              </Button>
+            </Flex>
           </div>
         </div>
-
-        <button className="btn btn-add" onClick={handlePersonalSubmit}>
-          Add Personal
-        </button>
       </div>
       <PersonalList
         personals={personals}

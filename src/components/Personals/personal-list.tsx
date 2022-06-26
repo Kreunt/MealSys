@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { PersonalListRow } from "./personal-list-row";
 import { EditablePersonalListRow } from "./editable-personal-list-row";
+import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 
 interface PersonalUI {
   id: number;
@@ -38,30 +39,30 @@ export const PersonalList = (props: PersonalListUI) => {
   };
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th className="table-head-item" />
+    <Table className="table">
+      <Thead>
+        <Tr>
+          <Th className="table-head-item" />
 
-          <th className="table-head-item">Name</th>
+          <Th className="table-head-item">Name</Th>
 
-          <th className="table-head-item">Age</th>
+          <Th className="table-head-item">Age</Th>
 
-          <th className="table-head-item">Working hours</th>
+          <Th className="table-head-item">Working hours</Th>
 
-          <th className="table-head-item">Free days</th>
+          <Th className="table-head-item">Free days</Th>
 
-          <th className="table-head-item">Area</th>
+          <Th className="table-head-item">Area</Th>
 
-          <th className="table-head-item">Phone</th>
+          <Th className="table-head-item">Phone</Th>
 
-          <th className="table-head-item">Actions</th>
+          <Th className="table-head-item">Actions</Th>
 
-          <th className="table-head-item" />
-        </tr>
-      </thead>
+          <Th className="table-head-item" />
+        </Tr>
+      </Thead>
 
-      <tbody className="table-body">
+      <Tbody className="table-body">
         {props.personals.length > 0 ? (
           props.personals.map((personal: PersonalUI, index: number) => (
             <Fragment key={index}>
@@ -85,17 +86,17 @@ export const PersonalList = (props: PersonalListUI) => {
             </Fragment>
           ))
         ) : (
-          <tr className="table-row">
-            <td
+          <Tr className="table-row">
+            <Td
               colSpan={9}
               className="table-item"
               style={{ textAlign: "center" }}
             >
               No personals found
-            </td>
-          </tr>
+            </Td>
+          </Tr>
         )}
-      </tbody>
-    </table>
+      </Tbody>
+    </Table>
   );
 };
