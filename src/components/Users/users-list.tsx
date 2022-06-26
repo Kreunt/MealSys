@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { UsersListRow } from "./users-list-row";
 import { EditableUsersListRow } from "./editable-users-list-row";
-import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th } from "@chakra-ui/react";
 
 interface UserUI {
   id: number;
