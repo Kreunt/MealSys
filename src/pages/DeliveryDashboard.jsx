@@ -10,7 +10,7 @@ function logout() {
 export function DeliveryDashboard() {
   return (
     <div>
-      <h2>Delivery Dashboard</h2>
+      <h2>Lieferung Dashboard</h2>
       <IconButton
         className="logoutButton"
         type="button"
