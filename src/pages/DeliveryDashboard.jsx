@@ -20,13 +20,11 @@ export function DeliveryDashboard() {
         top="40px"
         right="40px"
         icon={<ArrowBackIcon />}
-      >
-        Logout
-      </IconButton>
+      />
       <ButtonBar
         renderOrders={true}
         renderCustomers={true}
-        renderIncomeExpenses={true}
+        renderIncomeExpenses={false} //wichtig
       />
     </div>
   );

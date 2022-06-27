@@ -2,7 +2,6 @@ import { IconButton } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import React from "react";
 import { ButtonBar } from "../components/ButtonBar";
-import "../css/ManagementDashboard.css";
 
 function logout() {
   window.location.href = "/";
@@ -20,9 +19,7 @@ export function ManagementDashboard() {
         top="40px"
         right="40px"
         icon={<ArrowBackIcon />}
-      >
-        Logout
-      </IconButton>
+      />
       <ButtonBar
         renderCustomers={true}
         renderMenus={true}
