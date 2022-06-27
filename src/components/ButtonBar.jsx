@@ -115,7 +115,7 @@ export function ButtonBar({
             filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewUsers}
           >
-            Users
+            Nutzer
           </Button>
         )}
         {renderPersonals && (
@@ -127,7 +127,7 @@ export function ButtonBar({
             filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewPersonals}
           >
-            Personals
+            Personal
           </Button>
         )}
         {renderCustomers && (
@@ -139,7 +139,7 @@ export function ButtonBar({
             filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewCustomers}
           >
-            Customers
+            Kunden
           </Button>
         )}
         {renderMenus && (
@@ -151,7 +151,7 @@ export function ButtonBar({
             filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewMenus}
           >
-            Menus
+            Menüs
           </Button>
         )}
         {renderOrders && (
@@ -163,7 +163,7 @@ export function ButtonBar({
             filter={"drop-shadow(2px 2px 0.25rem teal)"}
             onClick={handleViewOrders}
           >
-            Orders
+            Bestellungen
           </Button>
         )}
         {renderIngredients && (

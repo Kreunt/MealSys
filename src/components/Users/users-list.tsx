@@ -21,7 +21,7 @@ export const UsersList = (props: UsersListUI) => {
   const [editUserId, setEditUserId] = useState(null);
 
   if (props.loading) {
-    return <p>Users List is loading...</p>;
+    return <p>Users List wird geladen...</p>;
   }
 
   const handleUserEditClick = (event: any, user: any) => {
@@ -43,11 +43,11 @@ export const UsersList = (props: UsersListUI) => {
 
           <Th className="table-head-item">Username</Th>
 
-          <Th className="table-head-item">Password</Th>
+          <Th className="table-head-item">Passwort</Th>
 
-          <Th className="table-head-item">Area</Th>
+          <Th className="table-head-item">Bereich</Th>
 
-          <Th className="table-head-item">Actions</Th>
+          <Th className="table-head-item">Aktionen</Th>
 
           <Th className="table-head-item" />
         </Tr>

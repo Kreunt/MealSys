@@ -33,7 +33,7 @@ export const UsersListRow = (props: UsersListRowUI) => {
             colorScheme={"blue"}
             onClick={(event) => props.handleUserEditClick(event, props.user)}
           >
-            Edit User
+            Nutzer bearbeiten
           </Button>
           <Button
             className="btn btn-remove"
@@ -42,7 +42,7 @@ export const UsersListRow = (props: UsersListRowUI) => {
               props.handleUserRemove(props.user.id, props.user.username)
             }
           >
-            Remove User
+            Nutzer löschen
           </Button>
         </Flex>
       </Td>

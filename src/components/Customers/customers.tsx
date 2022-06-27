@@ -114,14 +114,14 @@ export const Customers = () => {
             >
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="name">
-                  Enter name:{" "}
+                  Name:
                 </FormLabel>
                 <Input
                   className="form-Input"
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Full name..."
+                  placeholder="Name..."
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -129,14 +129,14 @@ export const Customers = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="age">
-                  Enter age:{" "}
+                  Alter:
                 </FormLabel>
                 <Input
                   className="form-Input"
                   type="number"
                   id="age"
                   name="age"
-                  placeholder="Age..."
+                  placeholder="Alter..."
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
                 />
@@ -144,14 +144,14 @@ export const Customers = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="address">
-                  Enter address:{" "}
+                  Adresse:
                 </FormLabel>
                 <Input
                   className="form-Input"
                   type="text"
                   id="address"
                   name="address"
-                  placeholder="Address..."
+                  placeholder="Adresse..."
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />
@@ -159,14 +159,14 @@ export const Customers = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="phone">
-                  Enter phone:{" "}
+                  Telefonnumer:
                 </FormLabel>
                 <Input
                   className="form-Input"
                   type="text"
                   id="phone"
                   name="phone"
-                  placeholder="Phone..."
+                  placeholder="Telefonnumer..."
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
@@ -177,14 +177,13 @@ export const Customers = () => {
                   className="form-FormLabel"
                   htmlFor="dateOfSubscription"
                 >
-                  Enter date of subscription:{" "}
+                  Datum der Anmeldung:
                 </FormLabel>
                 <Input
                   className="form-Input"
                   type="date"
                   id="dateOfSubscription"
                   name="dateOfSubscription"
-                  placeholder="Date of subscription..."
                   value={dateOfSubscription}
                   onChange={(e) => setDateOfSubscription(e.target.value)}
                 />
@@ -195,7 +194,7 @@ export const Customers = () => {
                   className="form-FormLabel"
                   htmlFor="dateOfSubscriptionEnd"
                 >
-                  Enter date of subscription end:{" "}
+                  Ende des Abos:
                 </FormLabel>
                 <Input
                   className="form-Input"
@@ -209,14 +208,14 @@ export const Customers = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="paidAmount">
-                  Enter paid amount:{" "}
+                  Bezahlter Betrag:
                 </FormLabel>
                 <Input
                   className="form-Input"
                   type="number"
                   id="paidAmount"
                   name="paidAmount"
-                  placeholder="Paid amount..."
+                  placeholder="Bezahlter Betrag:..."
                   value={paidAmount}
                   onChange={(e) => setPaidAmount(e.target.value)}
                 />
@@ -227,9 +226,9 @@ export const Customers = () => {
                 onClick={handleCustomerSubmit}
                 position={"relative"}
                 top={"10px"}
-                maxWidth={"150px"}
+                maxWidth={"200px"}
               >
-                Add Customer
+                Kunde hinzufügen
               </Button>
             </Flex>
           </div>

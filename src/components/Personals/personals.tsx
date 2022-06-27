@@ -111,7 +111,7 @@ export const Personals = () => {
             >
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="name">
-                  Enter name:
+                  Name:
                 </FormLabel>
                 <Input
                   className="form-input"
@@ -126,14 +126,14 @@ export const Personals = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="age">
-                  Enter age:
+                  Alter:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="age"
                   name="age"
-                  placeholder="Age..."
+                  placeholder="Alter..."
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
                 />
@@ -141,14 +141,14 @@ export const Personals = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="workingHours">
-                  Enter working hours:
+                  Werkstunden:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="workingHours"
                   name="workingHours"
-                  placeholder="Working hours..."
+                  placeholder="Werkstunden..."
                   value={workingHours}
                   onChange={(e) => setWorkingHours(e.target.value)}
                 />
@@ -156,14 +156,14 @@ export const Personals = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="freeDays">
-                  Enter free days:
+                  Feiertage:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="freeDays"
                   name="freeDays"
-                  placeholder="Free days..."
+                  placeholder="Feiertage..."
                   value={freeDays}
                   onChange={(e) => setFreeDays(e.target.value)}
                 />
@@ -171,14 +171,14 @@ export const Personals = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="area">
-                  Enter area:
+                  Bereich:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="area"
                   name="area"
-                  placeholder="Area..."
+                  placeholder="Bereich..."
                   value={area}
                   onChange={(e) => setArea(e.target.value)}
                 />
@@ -186,14 +186,14 @@ export const Personals = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="phone">
-                  Enter phone:
+                  Telefonnumer:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="phone"
                   name="phone"
-                  placeholder="Phone..."
+                  placeholder="Telefonnumer..."
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
@@ -203,10 +203,10 @@ export const Personals = () => {
                 onClick={handlePersonalSubmit}
                 position={"relative"}
                 top={"10px"}
-                maxWidth={"150px"}
+                maxWidth={"200px"}
                 colorScheme={"green"}
               >
-                Add Personal
+                Personal hinzufügen
               </Button>
             </Flex>
           </div>

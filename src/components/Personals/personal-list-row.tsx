@@ -38,7 +38,7 @@ export const PersonalListRow = (props: PersonalListRowUI) => {
               props.handlePersonalEditClick(event, props.personal)
             }
           >
-            Edit Personal
+            Personal bearbeiten
           </Button>
           <Button
             className="btn btn-remove"
@@ -47,7 +47,7 @@ export const PersonalListRow = (props: PersonalListRowUI) => {
               props.handlePersonalRemove(props.personal.id, props.personal.name)
             }
           >
-            Remove Personal
+            Personal löschen
           </Button>
         </Flex>
       </Td>

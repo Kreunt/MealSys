@@ -95,7 +95,7 @@ export const Users = () => {
             >
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="username">
-                  Enter username:
+                  Username:
                 </FormLabel>
                 <Input
                   className="form-input"
@@ -109,12 +109,12 @@ export const Users = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="password">
-                  Enter password:
+                  Passwort:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
-                  placeholder="Password..."
+                  placeholder="Passwort..."
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -123,12 +123,12 @@ export const Users = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-FormLabel" htmlFor="area">
-                  Enter area:
+                  Bereich:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
-                  placeholder="Area..."
+                  placeholder="Bereich..."
                   id="area"
                   value={area}
                   onChange={(e) => setArea(e.target.value)}
@@ -141,9 +141,9 @@ export const Users = () => {
                 onClick={handleUserSubmit}
                 position={"relative"}
                 top={"10px"}
-                maxWidth={"150px"}
+                maxWidth={"200px"}
               >
-                Add User
+                Nutzer hinzufügen
               </Button>
             </Flex>
           </div>

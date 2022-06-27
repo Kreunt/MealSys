@@ -25,7 +25,7 @@ export const CustomerList = (props: CustomerListUI) => {
   const [editCustomerId, setEditCustomerId] = useState(null);
 
   if (props.loading) {
-    return <p>Customer List is loading...</p>;
+    return <p>Kundenliste wird geladen...</p>;
   }
 
   const handleCustomerEditClick = (event: any, customer: any) => {
@@ -43,23 +43,23 @@ export const CustomerList = (props: CustomerListUI) => {
     <Table className="table">
       <Thead>
         <Tr>
-          <Th className="table-head-item">Customer ID</Th>
+          <Th className="table-head-item">Kunde ID</Th>
 
           <Th className="table-head-item">Name</Th>
 
-          <Th className="table-head-item">Age</Th>
+          <Th className="table-head-item">Alter</Th>
 
-          <Th className="table-head-item">Address</Th>
+          <Th className="table-head-item">Adresse</Th>
 
-          <Th className="table-head-item">Phone</Th>
+          <Th className="table-head-item">Telefonnumer</Th>
 
-          <Th className="table-head-item">Date of subscription</Th>
+          <Th className="table-head-item">Datum der Anmeldung</Th>
 
-          <Th className="table-head-item">Date of subscription end</Th>
+          <Th className="table-head-item">Ende des Abos</Th>
 
-          <Th className="table-head-item">Paid amount</Th>
+          <Th className="table-head-item">Bezahlter Betrag</Th>
 
-          <Th className="table-head-item">Actions</Th>
+          <Th className="table-head-item">Aktionen</Th>
 
           <Th className="table-head-item" />
         </Tr>
@@ -93,9 +93,9 @@ export const CustomerList = (props: CustomerListUI) => {
             <Td
               className="table-item"
               style={{ textAlign: "center" }}
-              colSpan={6}
+              colSpan={9}
             >
-              No customers found
+              Keine Kunden vorhanden
             </Td>
           </Tr>
         )}

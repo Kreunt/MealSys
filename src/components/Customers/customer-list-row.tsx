@@ -40,7 +40,7 @@ export const CustomerListRow = (props: CustomerListRowUI) => {
               props.handleCustomerEditClick(event, props.customer)
             }
           >
-            Edit Customer
+            Kunde bearbeiten
           </Button>
           <Button
             className="btn btn-remove"
@@ -49,7 +49,7 @@ export const CustomerListRow = (props: CustomerListRowUI) => {
               props.handleCustomerRemove(props.customer.id, props.customer.name)
             }
           >
-            Remove Customer
+            Kunde löschen
           </Button>
         </Flex>
       </Td>

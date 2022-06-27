@@ -60,7 +60,7 @@ export const EditablePersonalListRow = (props: PersonalListRowUI) => {
             }}
             colorScheme={"green"}
           >
-            Save Changes
+            Speichern
           </Button>
           <Button
             className="btn btn-remove"
@@ -72,7 +72,7 @@ export const EditablePersonalListRow = (props: PersonalListRowUI) => {
             }}
             colorScheme={"red"}
           >
-            Remove Personal
+            Personal löschen
           </Button>
         </Flex>
       </Td>

@@ -24,7 +24,7 @@ export const PersonalList = (props: PersonalListUI) => {
   const [editPersonalId, setEditPersonalId] = useState(null);
 
   if (props.loading) {
-    return <p>Personal List is loading...</p>;
+    return <p>Personal List wird geladen...</p>;
   }
 
   const handlePersonalEditClick = (event: any, personal: any) => {
@@ -46,17 +46,17 @@ export const PersonalList = (props: PersonalListUI) => {
 
           <Th className="table-head-item">Name</Th>
 
-          <Th className="table-head-item">Age</Th>
+          <Th className="table-head-item">Alter</Th>
 
-          <Th className="table-head-item">Working hours</Th>
+          <Th className="table-head-item">Werkstunden</Th>
 
-          <Th className="table-head-item">Free days</Th>
+          <Th className="table-head-item">Feiertage</Th>
 
-          <Th className="table-head-item">Area</Th>
+          <Th className="table-head-item">Bereich</Th>
 
-          <Th className="table-head-item">Phone</Th>
+          <Th className="table-head-item">Telefonnumer</Th>
 
-          <Th className="table-head-item">Actions</Th>
+          <Th className="table-head-item">Aktionen</Th>
 
           <Th className="table-head-item" />
         </Tr>
@@ -92,7 +92,7 @@ export const PersonalList = (props: PersonalListUI) => {
               className="table-item"
               style={{ textAlign: "center" }}
             >
-              No personals found
+              Kein Personal vorhanden
             </Td>
           </Tr>
         )}

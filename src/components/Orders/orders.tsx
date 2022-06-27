@@ -102,13 +102,13 @@ export const Orders = () => {
             >
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="customerId">
-                  Enter Customer ID:
+                  Kunde ID:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="customerId"
-                  placeholder="Customer ID..."
+                  placeholder="Kunde ID..."
                   value={customerId}
                   onChange={(e) => setCustomerId(e.target.value)}
                 />
@@ -116,7 +116,7 @@ export const Orders = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="menuId">
-                  Enter Menu ID:
+                  Menu ID:
                 </FormLabel>
                 <Input
                   className="form-input"
@@ -130,7 +130,7 @@ export const Orders = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="date">
-                  Enter date:
+                  Datum:
                 </FormLabel>
                 <Input
                   className="form-input"
@@ -143,13 +143,13 @@ export const Orders = () => {
 
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="price">
-                  Enter price:
+                  Preis:
                 </FormLabel>
                 <Input
                   className="form-input"
                   type="text"
                   id="price"
-                  placeholder="Price..."
+                  placeholder="Preis..."
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -159,9 +159,9 @@ export const Orders = () => {
                   onClick={handleOrderSubmit}
                   position={"relative"}
                   top={"10px"}
-                  maxWidth={"150px"}
+                  maxWidth={"200px"}
                 >
-                  Add Order
+                  Bestellung hinzufügen
                 </Button>
               </FormControl>
             </Flex>

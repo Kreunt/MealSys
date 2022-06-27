@@ -54,7 +54,7 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
               props.handleSaveClick(event, changeForm);
             }}
           >
-            Save Changes
+            Speichern
           </Button>
           <Button
             className="btn btn-remove"
@@ -63,7 +63,7 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
             }}
             colorScheme={"red"}
           >
-            Remove User
+            Nutzer löschen
           </Button>
         </Flex>
       </Td>

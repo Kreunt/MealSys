@@ -22,7 +22,7 @@ export const OrdersList = (props: OrdersListUI) => {
   const [editOrderId, setEditOrderId] = useState(null);
 
   if (props.loading) {
-    return <p>Orders List is loading...</p>;
+    return <p>Bestellung Liste wird geladen...</p>;
   }
 
   const handleOrderEditClick = (event: any, order: any) => {
@@ -42,15 +42,15 @@ export const OrdersList = (props: OrdersListUI) => {
         <Tr>
           <Th className="table-head-item" />
 
-          <Th className="table-head-item">Customer ID</Th>
+          <Th className="table-head-item">Kunde ID</Th>
 
           <Th className="table-head-item">Menu ID</Th>
 
-          <Th className="table-head-item">Date</Th>
+          <Th className="table-head-item">Datum</Th>
 
-          <Th className="table-head-item">Price</Th>
+          <Th className="table-head-item">Preis</Th>
 
-          <Th className="table-head-item">Actions</Th>
+          <Th className="table-head-item">Aktionen</Th>
 
           <Th className="table-head-item" />
         </Tr>

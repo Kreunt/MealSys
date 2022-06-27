@@ -60,7 +60,7 @@ export const EditableCustomerListRow = (props: CustomerListRowUI) => {
             onClick={(event) => props.handleSaveClick(event, changeForm)}
             colorScheme={"green"}
           >
-            Save Changes
+            Speichern
           </Button>
           <Button
             className="btn btn-remove"
@@ -69,7 +69,7 @@ export const EditableCustomerListRow = (props: CustomerListRowUI) => {
             }
             colorScheme={"red"}
           >
-            Remove Customer
+            Kunde löschen
           </Button>
         </Flex>
       </Td>

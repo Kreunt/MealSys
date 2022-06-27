@@ -34,14 +34,14 @@ export const OrdersListRow = (props: OrdersListRowUI) => {
             colorScheme={"blue"}
             onClick={(event) => props.handleOrderEditClick(event, props.order)}
           >
-            Edit Order
+            Bestellung bearbeiten
           </Button>
           <Button
             className="btn btn-remove"
             colorScheme={"red"}
             onClick={() => props.handleOrderRemove(props.order.id)}
           >
-            Remove Order
+            Bestellung löschen
           </Button>
         </Flex>
       </Td>
