@@ -9,6 +9,7 @@ const usersTokenRouter = require("./routes/users-route-usertoken.js");
 const customersRouter = require("./routes/customers-route.js");
 const personalsRouter = require("./routes/personal-route.js");
 const ordersRouter = require("./routes/orders-route.js");
+const menusRouter = require("./routes/menus-route.js");
 
 const PORT = process.env.PORT || 4001;
 
@@ -27,6 +28,7 @@ app.use("/api/users", usersRouter);
 app.use("/api/customers", customersRouter);
 app.use("/api/personal", personalsRouter);
 app.use("/api/orders", ordersRouter);
+app.use("/api/menus", menusRouter);
 
 app.use(function (err, req, res) {
   console.error(err.stack);
