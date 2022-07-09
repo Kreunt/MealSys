@@ -4,6 +4,7 @@ import { Customers } from "./Customers/customers";
 import { Users } from "./Users/users";
 import { Personals } from "./Personals/personals";
 import { Orders } from "./Orders/orders";
+import { Menus } from "./Menus/menus";
 
 export function ButtonBar({
   renderCustomers,
@@ -195,7 +196,7 @@ export function ButtonBar({
         {viewUsers && <Users />}
         {viewPersonals && <Personals />}
         {viewCustomers && <Customers />}
-        {viewMenus && <div>Menus</div>}
+        {viewMenus && <Menus />}
         {viewOrders && <Orders />}
         {viewIngredients && <div>Ingredients</div>}
         {viewIncomeExpenses && <div>Income/Expenses</div>}

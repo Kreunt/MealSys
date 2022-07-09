@@ -153,17 +153,18 @@ export const Orders = () => {
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
-                <Button
-                  className="btn btn-add"
-                  colorScheme={"green"}
-                  onClick={handleOrderSubmit}
-                  position={"relative"}
-                  top={"10px"}
-                  maxWidth={"200px"}
-                >
-                  Bestellung hinzufügen
-                </Button>
               </FormControl>
+
+              <Button
+                className="btn btn-add"
+                colorScheme={"green"}
+                onClick={handleOrderSubmit}
+                position={"relative"}
+                top={"10px"}
+                maxWidth={"200px"}
+              >
+                Bestellung hinzufügen
+              </Button>
             </Flex>
           </div>
         </div>
