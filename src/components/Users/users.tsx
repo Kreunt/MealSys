@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import { DropdownMenu } from "../DropdownMenu";
 import { UsersList } from "./users-list";
 import { Button, Flex, FormControl, Input, FormLabel } from "@chakra-ui/react";
 
@@ -125,13 +126,9 @@ export const Users = () => {
                 <FormLabel className="form-FormLabel" htmlFor="area">
                   Bereich:
                 </FormLabel>
-                <Input
-                  className="form-input"
-                  type="text"
-                  placeholder="Bereich..."
-                  id="area"
-                  value={area}
-                  onChange={(e) => setArea(e.target.value)}
+                <DropdownMenu
+                  setValue={setArea}
+                  optionsToSelect={["Management", "MealPlanning", "Delivery"]}
                 />
               </FormControl>
               <Button

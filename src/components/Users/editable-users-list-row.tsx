@@ -1,4 +1,5 @@
 import { Button, Flex, Input, Td, Tr } from "@chakra-ui/react";
+import { DropdownMenu } from "../DropdownMenu";
 import React, { useState } from "react";
 
 interface UsersListRowUI {
@@ -20,6 +21,12 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
     password: props.user.password,
     area: props.user.area,
   });
+  const setArea = (value: string) => {
+    setChangeForm({
+      ...changeForm,
+      area: value,
+    });
+  };
 
   return (
     <Tr className="table-row">
@@ -27,6 +34,14 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
       {Object.keys(props.user)
         .slice(1)
         .map((key: string, index: number) => {
+          if (key === "area") {
+            return (
+              <DropdownMenu
+                setValue={setArea}
+                optionsToSelect={["Management", "MealPlanning", "Delivery"]}
+              />
+            );
+          }
           return (
             <Td key={index} className="table-item">
               <Input

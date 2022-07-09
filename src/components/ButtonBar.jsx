@@ -12,24 +12,18 @@ export function ButtonBar({
   renderOrders,
   renderUsers,
   renderPersonals,
-  renderIngredients,
-  renderIncomeExpenses,
 }) {
   const [viewCustomers, setViewCustomers] = useState(false);
   const [viewMenus, setViewMenus] = useState(false);
   const [viewOrders, setViewOrders] = useState(false);
   const [viewUsers, setViewUsers] = useState(false);
   const [viewPersonals, setViewPersonals] = useState(false);
-  const [viewIngredients, setViewIngredients] = useState(false);
-  const [viewIncomeExpenses, setViewIncomeExpenses] = useState(false);
 
   const handleViewCustomers = () => {
     setViewMenus(false);
     setViewOrders(false);
     setViewUsers(false);
     setViewPersonals(false);
-    setViewIngredients(false);
-    setViewIncomeExpenses(false);
     setViewCustomers(!viewCustomers);
   };
 
@@ -38,8 +32,6 @@ export function ButtonBar({
     setViewOrders(false);
     setViewUsers(false);
     setViewPersonals(false);
-    setViewIngredients(false);
-    setViewIncomeExpenses(false);
     setViewMenus(!viewMenus);
   };
 
@@ -48,8 +40,6 @@ export function ButtonBar({
     setViewMenus(false);
     setViewUsers(false);
     setViewPersonals(false);
-    setViewIngredients(false);
-    setViewIncomeExpenses(false);
     setViewOrders(!viewOrders);
   };
 
@@ -58,8 +48,6 @@ export function ButtonBar({
     setViewMenus(false);
     setViewOrders(false);
     setViewPersonals(false);
-    setViewIngredients(false);
-    setViewIncomeExpenses(false);
     setViewUsers(!viewUsers);
   };
 
@@ -68,29 +56,7 @@ export function ButtonBar({
     setViewMenus(false);
     setViewOrders(false);
     setViewUsers(false);
-    setViewIngredients(false);
-    setViewIncomeExpenses(false);
     setViewPersonals(!viewPersonals);
-  };
-
-  const handleViewIngredients = () => {
-    setViewCustomers(false);
-    setViewMenus(false);
-    setViewOrders(false);
-    setViewUsers(false);
-    setViewPersonals(false);
-    setViewIncomeExpenses(false);
-    setViewIngredients(!viewIngredients);
-  };
-
-  const handleViewIncomeExpenses = () => {
-    setViewCustomers(false);
-    setViewMenus(false);
-    setViewOrders(false);
-    setViewUsers(false);
-    setViewPersonals(false);
-    setViewIngredients(false);
-    setViewIncomeExpenses(!viewIncomeExpenses);
   };
 
   return (
@@ -167,30 +133,6 @@ export function ButtonBar({
             Bestellungen
           </Button>
         )}
-        {renderIngredients && (
-          <Button
-            colorScheme={viewIngredients ? "gray" : "teal"}
-            variant="solid"
-            className="IngredientsButton"
-            type="button"
-            filter={"drop-shadow(2px 2px 0.25rem teal)"}
-            onClick={handleViewIngredients}
-          >
-            Ingredients
-          </Button>
-        )}
-        {renderIncomeExpenses && (
-          <Button
-            colorScheme={viewIncomeExpenses ? "gray" : "teal"}
-            variant="solid"
-            className="IncomeExpensesButton"
-            type="button"
-            filter={"drop-shadow(2px 2px 0.25rem teal)"}
-            onClick={handleViewIncomeExpenses}
-          >
-            Income/Expenses
-          </Button>
-        )}
       </Flex>
       <VStack>
         {viewUsers && <Users />}
@@ -198,8 +140,6 @@ export function ButtonBar({
         {viewCustomers && <Customers />}
         {viewMenus && <Menus />}
         {viewOrders && <Orders />}
-        {viewIngredients && <div>Ingredients</div>}
-        {viewIncomeExpenses && <div>Income/Expenses</div>}
       </VStack>
     </Flex>
   );
