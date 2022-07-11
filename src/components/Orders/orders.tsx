@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { OrdersList } from "./orders-list";
+import { SearchableDropdown } from "../SearchableDropdown";
 import { Button, Flex, FormControl, Input, FormLabel } from "@chakra-ui/react";
 
 export const Orders = () => {
@@ -10,9 +11,11 @@ export const Orders = () => {
   const [date, setDate] = useState("");
   const [price, setPrice] = useState("");
   const [orders, setOrders] = useState([]);
+  const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    fetchCustomers();
     fetchOrders();
   }, []);
 
@@ -22,6 +25,17 @@ export const Orders = () => {
       .then((response) => {
         setOrders(response.data);
         setLoading(false);
+      })
+      .catch((error) => {
+        console.log("Es ist ein Fehler aufgetreten: ", error);
+      });
+  };
+
+  const fetchCustomers = async () => {
+    axios
+      .get("http://localhost:4001/api/customers/all")
+      .then((response) => {
+        setCustomers(response.data);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);
@@ -100,20 +114,12 @@ export const Orders = () => {
               width="90%"
               paddingBottom={"5"}
             >
-              <FormControl isRequired>
-                <FormLabel className="form-label" htmlFor="customerId">
-                  Kunde ID:
-                </FormLabel>
-                <Input
-                  className="form-input"
-                  type="text"
-                  id="customerId"
-                  placeholder="Kunde ID..."
-                  value={customerId}
-                  onChange={(e) => setCustomerId(e.target.value)}
-                />
-              </FormControl>
-
+              <SearchableDropdown
+                name="Kunde"
+                values={customers}
+                setValue={setCustomerId}
+                loading={loading}
+              />
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="menuId">
                   Menu ID:
