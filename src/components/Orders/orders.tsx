@@ -118,7 +118,6 @@ export const Orders = () => {
                 name="Kunde"
                 values={customers}
                 setValue={setCustomerId}
-                loading={loading}
               />
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="menuId">
