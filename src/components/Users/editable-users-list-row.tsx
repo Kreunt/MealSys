@@ -36,10 +36,12 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
         .map((key: string, index: number) => {
           if (key === "area") {
             return (
-              <DropdownMenu
-                setValue={setArea}
-                optionsToSelect={["Management", "MealPlanning", "Delivery"]}
-              />
+              <Td key={index} className="table-item">
+                <DropdownMenu
+                  setValue={setArea}
+                  optionsToSelect={["Management", "MealPlanning", "Delivery"]}
+                />
+              </Td>
             );
           }
           return (
