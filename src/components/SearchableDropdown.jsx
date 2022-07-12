@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControl, FormLabel, FormHelperText } from "@chakra-ui/react";
+import { FormControl, FormLabel } from "@chakra-ui/react";
 import {
   AutoComplete,
   AutoCompleteInput,
@@ -7,14 +7,7 @@ import {
   AutoCompleteList,
 } from "@choc-ui/chakra-autocomplete";
 
-export const SearchableDropdown = ({ name, values, setValue, loading }) => {
-  /*useEffect(() => {
-    fetchFunc();
-    console.log("bruh", values);
-  }, []);*/
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+export const SearchableDropdown = ({ name, values, setValue }) => {
   return (
     <FormControl isRequired>
       <FormLabel>{name} ID:</FormLabel>
@@ -36,7 +29,6 @@ export const SearchableDropdown = ({ name, values, setValue, loading }) => {
           ))}
         </AutoCompleteList>
       </AutoComplete>
-      <FormHelperText>Bitte geben Sie das ID ein.</FormHelperText>
     </FormControl>
   );
 };
