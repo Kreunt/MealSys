@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { PersonalList } from "./personal-list";
 import { Button, Flex, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { DropdownMenu } from "../DropdownMenu";
 
 export const Personals = () => {
   const [name, setName] = useState("");
@@ -173,14 +174,9 @@ export const Personals = () => {
                 <FormLabel className="form-FormLabel" htmlFor="area">
                   Bereich:
                 </FormLabel>
-                <Input
-                  className="form-input"
-                  type="text"
-                  id="area"
-                  name="area"
-                  placeholder="Bereich..."
-                  value={area}
-                  onChange={(e) => setArea(e.target.value)}
+                <DropdownMenu
+                  setValue={setArea}
+                  optionsToSelect={["Management", "MealPlanning", "Delivery"]}
                 />
               </FormControl>
 
