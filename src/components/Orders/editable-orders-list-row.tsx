@@ -1,5 +1,6 @@
 import { Button, Flex, Input, Td, Tr } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { SearchableDropdown } from "../SearchableDropdown";
 
 interface OrdersListRowUI {
   position: number;
@@ -10,6 +11,7 @@ interface OrdersListRowUI {
     date: string;
     price: number;
   };
+  customers: any[];
   handleOrderRemove: (id: number) => void;
   handleSaveClick: (event: any, order: any) => void;
 }
@@ -23,12 +25,29 @@ export const EditableOrdersListRow = (props: OrdersListRowUI) => {
     price: props.order.price,
   });
 
+  const setCustomerId = (value: number) => {
+    setChangeForm({
+      ...changeForm,
+      customerId: value,
+    });
+  };
   return (
     <Tr className="table-row">
       <Td className="table-item">{props.position}</Td>
       {Object.keys(props.order)
         .slice(1)
         .map((key: string, index: number) => {
+          if (key === "customerId") {
+            return (
+              <Td key={index} className="table-item">
+                <SearchableDropdown
+                  name={"Kunde"}
+                  values={props.customers}
+                  setValue={setCustomerId}
+                />
+              </Td>
+            );
+          }
           return (
             <Td key={index} className="table-item">
               <Input

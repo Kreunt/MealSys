@@ -13,6 +13,7 @@ interface OrderUI {
 
 interface OrdersListUI {
   orders: OrderUI[];
+  customers: any[];
   loading: boolean;
   handleOrderRemove: (id: number) => void;
   handleOrderUpdate: (order: OrderUI) => void;
@@ -61,6 +62,7 @@ export const OrdersList = (props: OrdersListUI) => {
           <Fragment key={index}>
             {editOrderId === order.id ? (
               <EditableOrdersListRow
+                customers={props.customers}
                 key={order.id}
                 order={order}
                 position={index + 1}

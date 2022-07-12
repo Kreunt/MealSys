@@ -175,6 +175,7 @@ export const Orders = () => {
         </div>
       </div>
       <OrdersList
+        customers={customers}
         orders={orders}
         loading={loading}
         handleOrderRemove={handleOrderRemove}
