@@ -81,7 +81,6 @@ export const Customers = () => {
       .put(`http://localhost:4001/api/customers/delete`, { id: id })
       .then(() => {
         fetchCustomers();
-        alert(`${title} wurde gelöscht!`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);
@@ -93,7 +92,6 @@ export const Customers = () => {
       .put(`http://localhost:4001/api/customers/update`, customer)
       .then(() => {
         fetchCustomers();
-        alert(`${customer.name} wurde erfolgreich geändert!`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);

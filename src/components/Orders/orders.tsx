@@ -108,7 +108,6 @@ export const Orders = () => {
       .put(`http://localhost:4001/api/orders/update`, order)
       .then(() => {
         fetchOrders();
-        alert(`Order ${order.id} wurde geändert!`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);

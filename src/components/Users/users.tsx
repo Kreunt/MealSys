@@ -63,7 +63,6 @@ export const Users = () => {
       .put(`http://localhost:4001/api/users/delete`, { id: id })
       .then(() => {
         fetchUsers();
-        alert(`${title} wurde gelöscht!`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);
@@ -75,7 +74,6 @@ export const Users = () => {
       .put(`http://localhost:4001/api/users/update`, user)
       .then(() => {
         fetchUsers();
-        alert(`${user.username} wurde geändert!`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);

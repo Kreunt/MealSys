@@ -73,7 +73,6 @@ export const Menus = () => {
       .put(`http://localhost:4001/api/menus/update`, menu)
       .then(() => {
         fetchMenus();
-        alert(`Menü ${menu.name} wurde erfolgreich aktualisiert`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);

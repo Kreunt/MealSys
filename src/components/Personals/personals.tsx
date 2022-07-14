@@ -79,7 +79,6 @@ export const Personals = () => {
       .put(`http://localhost:4001/api/personal/delete`, { id: id })
       .then((response) => {
         fetchPersonals();
-        alert(`Personal ${title} wurde gelöscht!`);
       })
       .catch((error) => {
         console.log("Es ist ein Fehler aufgetreten: ", error);
