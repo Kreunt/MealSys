@@ -7,7 +7,12 @@ import {
   AutoCompleteList,
 } from "@choc-ui/chakra-autocomplete";
 
-export const SearchableDropdown = ({ name, values, setValue }) => {
+export const SearchableDropdown = ({
+  name,
+  values,
+  setValue,
+  currentValue,
+}) => {
   return (
     <FormControl isRequired>
       <FormLabel>{name} ID:</FormLabel>
@@ -15,6 +20,7 @@ export const SearchableDropdown = ({ name, values, setValue }) => {
         <AutoCompleteInput
           variant="filled"
           placeholder={`${name} ID...`}
+          value={currentValue}
           onChange={(e) => setValue(e.target.value)}
         />
         <AutoCompleteList>
