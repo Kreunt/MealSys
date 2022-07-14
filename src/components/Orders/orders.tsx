@@ -12,11 +12,13 @@ export const Orders = () => {
   const [price, setPrice] = useState("");
   const [orders, setOrders] = useState([]);
   const [customers, setCustomers] = useState([]);
+  const [menus, setMenus] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchCustomers();
     fetchOrders();
+    fetchMenus();
   }, []);
 
   const fetchOrders = async () => {
@@ -42,6 +44,17 @@ export const Orders = () => {
       });
   };
 
+  const fetchMenus = async () => {
+    axios
+      .get("http://localhost:4001/api/menus/all")
+      .then((response) => {
+        setMenus(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log("Es ist ein Fehler aufgetreten: ", error);
+      });
+  };
   const handleInputsReset = () => {
     setCustomerId("");
     setMenuId("");
@@ -117,21 +130,15 @@ export const Orders = () => {
               <SearchableDropdown
                 name="Kunde"
                 values={customers}
+                currentValue={customerId}
                 setValue={setCustomerId}
               />
-              <FormControl isRequired>
-                <FormLabel className="form-label" htmlFor="menuId">
-                  Menu ID:
-                </FormLabel>
-                <Input
-                  className="form-input"
-                  type="text"
-                  id="menuId"
-                  placeholder="Menu ID..."
-                  value={menuId}
-                  onChange={(e) => setMenuId(e.target.value)}
-                />
-              </FormControl>
+              <SearchableDropdown
+                name="Menü"
+                values={menus}
+                currentValue={menuId}
+                setValue={setMenuId}
+              />
 
               <FormControl isRequired>
                 <FormLabel className="form-label" htmlFor="date">
@@ -177,6 +184,7 @@ export const Orders = () => {
       <OrdersList
         customers={customers}
         orders={orders}
+        menus={menus}
         loading={loading}
         handleOrderRemove={handleOrderRemove}
         handleOrderUpdate={handleOrderUpdate}

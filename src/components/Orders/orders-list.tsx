@@ -14,6 +14,7 @@ interface OrderUI {
 interface OrdersListUI {
   orders: OrderUI[];
   customers: any[];
+  menus: any[];
   loading: boolean;
   handleOrderRemove: (id: number) => void;
   handleOrderUpdate: (order: OrderUI) => void;
@@ -63,6 +64,7 @@ export const OrdersList = (props: OrdersListUI) => {
             {editOrderId === order.id ? (
               <EditableOrdersListRow
                 customers={props.customers}
+                menus={props.menus}
                 key={order.id}
                 order={order}
                 position={index + 1}

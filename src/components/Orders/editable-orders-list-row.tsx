@@ -1,5 +1,6 @@
 import { Button, Flex, Input, Td, Tr } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { SearchableDropdown } from "../SearchableDropdown";
 
 interface OrdersListRowUI {
@@ -12,6 +13,7 @@ interface OrdersListRowUI {
     price: number;
   };
   customers: any[];
+  menus: any[];
   handleOrderRemove: (id: number) => void;
   handleSaveClick: (event: any, order: any) => void;
 }
@@ -24,11 +26,17 @@ export const EditableOrdersListRow = (props: OrdersListRowUI) => {
     date: props.order.date,
     price: props.order.price,
   });
-
   const setCustomerId = (value: number) => {
     setChangeForm({
       ...changeForm,
       customerId: value,
+    });
+  };
+
+  const setMenuId = (value: number) => {
+    setChangeForm({
+      ...changeForm,
+      menuId: value,
     });
   };
   return (
@@ -43,7 +51,19 @@ export const EditableOrdersListRow = (props: OrdersListRowUI) => {
                 <SearchableDropdown
                   name={"Kunde"}
                   values={props.customers}
+                  currentValue={changeForm.customerId}
                   setValue={setCustomerId}
+                />
+              </Td>
+            );
+          } else if (key === "menuId") {
+            return (
+              <Td key={index} className="table-item">
+                <SearchableDropdown
+                  name={"Menü"}
+                  currentValue={changeForm.menuId}
+                  values={props.menus}
+                  setValue={setMenuId}
                 />
               </Td>
             );
