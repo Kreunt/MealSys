@@ -38,6 +38,7 @@ export const EditableUsersListRow = (props: UsersListRowUI) => {
             return (
               <Td key={index} className="table-item">
                 <DropdownMenu
+                  currentVal={changeForm.area}
                   setValue={setArea}
                   optionsToSelect={["Management", "MealPlanning", "Delivery"]}
                 />

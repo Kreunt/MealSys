@@ -1,8 +1,9 @@
 import { Select } from "@chakra-ui/react";
-export function DropdownMenu({ setValue, optionsToSelect }) {
+export function DropdownMenu({ setValue, optionsToSelect, currentVal }) {
   return (
     <Select
       isRequired
+      value={currentVal}
       onChange={(e) => setValue(e.target.value)}
       placeholder="Bitte wählen..."
     >

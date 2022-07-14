@@ -176,6 +176,7 @@ export const Personals = () => {
                 </FormLabel>
                 <DropdownMenu
                   setValue={setArea}
+                  currentVal={area}
                   optionsToSelect={["Management", "MealPlanning", "Delivery"]}
                 />
               </FormControl>

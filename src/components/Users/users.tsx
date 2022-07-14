@@ -127,6 +127,7 @@ export const Users = () => {
                   Bereich:
                 </FormLabel>
                 <DropdownMenu
+                  currentVal={area}
                   setValue={setArea}
                   optionsToSelect={["Management", "MealPlanning", "Delivery"]}
                 />
