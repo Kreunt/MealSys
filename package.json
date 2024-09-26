@@ -61,7 +61,7 @@
     ]
   },
   "main": "src/index.tsx",
-  "prox": "http://localhost:4001",
+  "proxy": "process.env.API_URL || 'http://localhost:4001'",
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/react": "^18.0.8",

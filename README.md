@@ -2,18 +2,13 @@
 This is the whole project of MealSys, backend being in the server folder.
 
 ## Getting Started
-First, run the frontend:
+To run the whole project:
 
 ```bash
 npm start
 ```
 
-Second, run the server using node:
-```bash
-node server.js
-```
-
-Open http://localhost:3000 with your browser to see the result.
+Open http://localhost:3000 on your browser to see the result. Use the user 'melik' and the password '123' to login as admin.
 
 ![Login](https://i.imgur.com/fkj1Poo.png)
 ![Home](https://i.imgur.com/8vkGPqm.png)
